@@ -1,0 +1,24 @@
+---
+layout: null
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A speculative future interface for the Museum of Ordinary Life, a living archive of everyday life established in 2026."><meta name="color-scheme" content="light dark"><meta name="theme-color" id="theme-color" content="#f3eee4"><script>
+(() => {
+  try {
+    const savedTheme = localStorage.getItem('mol-future-theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      document.documentElement.dataset.theme = savedTheme;
+      document.querySelector('#theme-color')?.setAttribute('content', savedTheme === 'dark' ? '#17171b' : '#f3eee4');
+    } else if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+      document.querySelector('#theme-color')?.setAttribute('content', '#17171b');
+    }
+  } catch (_) {}
+})();
+</script><title>Museum of Ordinary Life / Possible Future</title><link rel="stylesheet" href="assets/css/base.css"><link rel="stylesheet" href="assets/css/future-components.css"><link rel="stylesheet" href="assets/css/future-theme.css"><link rel="stylesheet" href="assets/css/enhancements.css"></head><body id="top">
+{% include body-01.html %}
+{% include body-02.html %}
+{% include body-03.html %}
+{% include body-04.html %}
+{% include body-05.html %}
+{% include body-06.html %}
+{% include body-07.html %}
+<script src="assets/js/site.js" defer></script></body></html>
