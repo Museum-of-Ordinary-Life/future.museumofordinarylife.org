@@ -1,31 +1,49 @@
-# Museum of Ordinary Life — Future Interface
+# Museum of Ordinary Life — Possible Future
 
-Production source for **future.museumofordinarylife.org**, a speculative future version of the Museum of Ordinary Life.
+Production source for [future.museumofordinarylife.org](https://future.museumofordinarylife.org/), a speculative future interface for the Museum of Ordinary Life.
 
 This site is part of the Museum's Reality Layer and the larger *No One Noticed* project. It imagines one possible later interface for the real Museum established in 2026.
 
-## Repository structure
+## Site files
 
-- `index.html` — GitHub Pages entry point
-- `_includes/` — page markup, split into maintainable source fragments
-- `assets/css/` — base, future-interface, accessibility, and theme styles
-- `assets/js/site.js` — archive demo, dialogs, virtual Museum interactions, theme selection, and progressive enhancement
+- `index.html` — complete production page, with its CSS and JavaScript bundled inline
+- `favicon.png` — browser icon
+- `apple-touch-icon.png` — home-screen icon
+- `robots.txt` — crawler policy and sitemap location
+- `sitemap.xml` — canonical public URL
 - `CNAME` — GitHub Pages custom domain
-- `_config.yml` — minimal GitHub Pages/Jekyll configuration
+- `_config.yml` — minimal GitHub Pages configuration
+- `DEPLOYMENT.md` — Pages setup, DNS cutover, verification, and rollback runbook
 
-GitHub Pages assembles the `_includes/` into ordinary static HTML for visitors. There is no application framework or database dependency.
+The production files were imported from the Fastmail-hosted site archive on 2026-08-19. At import, all five public files matched the live Fastmail site byte for byte.
 
 ## Important
 
 This is a **speculative interface**. Example archive records, locations, interfaces, counts, and future institutional details are fictional unless explicitly identified otherwise. The site should maintain that distinction clearly.
 
+The contribution form is a demonstration. It must remain visibly labeled as non-transmitting unless a real, privacy-reviewed intake service is deliberately added.
+
+## Local preview
+
+From the repository root:
+
+```sh
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000/`. Preview through a web server rather than opening `index.html` directly so asset paths and browser behavior match production.
+
 ## Deployment
 
-Publish with **GitHub Pages from the `main` branch, repository root**.
+GitHub Pages publishes from the `main` branch and repository root.
 
 Custom domain: `future.museumofordinarylife.org`
 
-DNS is managed separately from this repository.
+DNS is managed by Fastmail separately from this repository. The website cutover changes only the `future` host record; Fastmail's nameservers and all mail-related MX, SPF, DKIM, and DMARC records stay in place. See [DEPLOYMENT.md](DEPLOYMENT.md) before changing Pages or DNS settings.
+
+## Documentation is part of the change
+
+Every site change must include any related documentation update in the same commit. At minimum, check this README, `DEPLOYMENT.md`, `robots.txt`, `sitemap.xml`, `CNAME`, visible privacy or prototype language, and the file list above. If the deployment method, domain, routes, data handling, or repository structure changes, the documentation is not optional.
 
 ## Present-day Museum
 

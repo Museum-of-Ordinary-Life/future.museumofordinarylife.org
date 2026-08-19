@@ -1,4 +1,7 @@
-title: Museum of Ordinary Life
+title: Museum of Ordinary Life — Possible Future
+url: https://future.museumofordinarylife.org
+baseurl: ""
 markdown: kramdown
 exclude:
   - README.md
+  - DEPLOYMENT.md

@@ -1,7 +1,18 @@
----
-layout: null
----
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A speculative future interface for the Museum of Ordinary Life, a living archive of everyday life established in 2026."><meta name="color-scheme" content="light dark"><meta name="theme-color" id="theme-color" content="#f3eee4"><script>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A speculative future interface for the Museum of Ordinary Life, a living archive of everyday life established in 2026.">
+<link rel="canonical" href="https://future.museumofordinarylife.org/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" id="theme-color" content="#f3eee4">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<script>
 (() => {
   try {
     const savedTheme = localStorage.getItem('mol-future-theme');
@@ -13,12 +24,3535 @@ layout: null
     }
   } catch (_) {}
 })();
-</script><title>Museum of Ordinary Life / Possible Future</title><link rel="stylesheet" href="assets/css/base.css"><link rel="stylesheet" href="assets/css/future-components.css"><link rel="stylesheet" href="assets/css/future-theme.css"><link rel="stylesheet" href="assets/css/enhancements.css"></head><body id="top">
-{% include body-01.html %}
-{% include body-02.html %}
-{% include body-03.html %}
-{% include body-04.html %}
-{% include body-05.html %}
-{% include body-06.html %}
-{% include body-07.html %}
-<script src="assets/js/site.js" defer></script></body></html>
+</script>
+<title>Museum of Ordinary Life / Possible Future</title>
+
+<style>
+:root{
+  --paper:#f4f1e8;
+  --paper2:#e9e4d8;
+  --ink:#141414;
+  --muted:#66635d;
+  --rule:#171717;
+  --soft-rule:#b8b2a7;
+  --blue:#2454ff;
+  --acid:#d9ff49;
+  --max:1480px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+button,input,textarea{font:inherit}
+.wrap{
+  width:min(calc(100% - 44px),var(--max));
+  margin:0 auto;
+}
+
+/* ---------- utility ---------- */
+
+.utility{
+  border-bottom:1px solid var(--rule);
+  font-size:12px;
+}
+.utility .wrap{
+  min-height:35px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+}
+.utility-left{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+.live{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+}
+.live:before{
+  content:"";
+  width:8px;
+  height:8px;
+  background:var(--acid);
+  border:1px solid var(--ink);
+  border-radius:50%;
+}
+.year-marker{
+  background:var(--acid);
+  padding:2px 5px 1px;
+  font-weight:700;
+}
+
+/* ---------- header ---------- */
+
+header{
+  border-bottom:1px solid var(--rule);
+}
+.header-row{
+  min-height:112px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:35px;
+  padding:17px 0 18px;
+}
+.wordmark{
+  text-decoration:none;
+  max-width:760px;
+}
+.wordmark .the{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:4px;
+}
+.wordmark .name{
+  display:block;
+  font-size:clamp(2.4rem,5.2vw,5.8rem);
+  line-height:.82;
+  font-weight:800;
+  letter-spacing:-.065em;
+}
+nav{
+  display:flex;
+  gap:7px 20px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  font-size:14px;
+  font-weight:700;
+}
+nav a,
+.nav-button{
+  color:inherit;
+  background:none;
+  border:0;
+  text-decoration:none;
+  border-bottom:2px solid transparent;
+  padding:0 0 3px;
+  cursor:pointer;
+  font:inherit;
+  font-weight:700;
+}
+nav a:hover,
+.nav-button:hover{border-color:var(--blue)}
+
+/* ---------- hero ---------- */
+
+.hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+  gap:50px;
+  min-height:630px;
+  padding:48px 0 46px;
+  border-bottom:1px solid var(--rule);
+}
+.hero-main{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.hero h1{
+  margin:0;
+  max-width:1030px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(4rem,8.6vw,9.5rem);
+  line-height:.87;
+  letter-spacing:-.062em;
+  font-weight:400;
+}
+.hero h1 .ordinary{
+  text-decoration:underline;
+  text-decoration-thickness:.055em;
+  text-underline-offset:.08em;
+  text-decoration-color:var(--blue);
+}
+.hero-caption{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  margin-top:52px;
+  max-width:980px;
+  font-size:12px;
+}
+.hero-caption p{
+  margin:0;
+  max-width:410px;
+  line-height:1.45;
+}
+.hero-side{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:44px;
+  border-left:1px solid var(--rule);
+  padding-left:25px;
+}
+.mission{
+  margin:0;
+  font-size:clamp(1.5rem,2.4vw,2.5rem);
+  line-height:1.05;
+  letter-spacing:-.035em;
+}
+.open-call{
+  border-top:5px solid var(--ink);
+  padding-top:14px;
+}
+.kicker{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  font-weight:700;
+}
+.open-call h2{
+  margin:10px 0 12px;
+  font-size:clamp(1.6rem,3vw,3.2rem);
+  line-height:.95;
+  letter-spacing:-.045em;
+}
+.open-call p{
+  margin:0 0 18px;
+  max-width:440px;
+  font-size:15px;
+  line-height:1.45;
+}
+.text-link{
+  display:inline-block;
+  font-weight:700;
+  text-decoration:none;
+  border-bottom:2px solid var(--blue);
+}
+.text-link:hover{
+  background:var(--blue);
+  color:#fff;
+}
+
+/* ---------- ticker ---------- */
+
+.notice{
+  background:var(--blue);
+  color:#fff;
+  border-bottom:1px solid var(--ink);
+}
+.notice .wrap{
+  min-height:47px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  font-size:14px;
+}
+.notice strong{
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+.notice a{
+  font-weight:700;
+  text-decoration:none;
+}
+.notice a:hover{text-decoration:underline}
+
+/* ---------- general ---------- */
+
+.section{
+  padding:70px 0 82px;
+  border-bottom:1px solid var(--rule);
+}
+.section-title{
+  display:grid;
+  grid-template-columns:1fr 2.2fr;
+  gap:30px;
+  margin-bottom:48px;
+}
+.section-title .kicker{
+  padding-top:8px;
+}
+.section-title h2{
+  margin:0;
+  max-width:1100px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3rem,6.3vw,7rem);
+  line-height:.91;
+  letter-spacing:-.055em;
+  font-weight:400;
+}
+.section-title h2 strong{
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:800;
+  letter-spacing:-.065em;
+}
+
+/* ---------- why ---------- */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
+}
+.why{
+  min-height:300px;
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.why .number{
+  font-size:11px;
+  font-weight:700;
+}
+.why h3{
+  margin:45px 0 12px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2rem,3.7vw,4rem);
+  line-height:.94;
+  letter-spacing:-.04em;
+  font-weight:400;
+}
+.why p{
+  margin:0;
+  max-width:370px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* ---------- exhibition ---------- */
+
+.exhibition{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  border:1px solid var(--rule);
+}
+.exhibition-image{
+  min-height:590px;
+  background:#d8d2c5;
+  position:relative;
+  overflow:hidden;
+}
+.exhibition-image:before{
+  content:"";
+  position:absolute;
+  inset:28px;
+  border:1px solid rgba(20,20,20,.38);
+}
+.exhibition-image .empty{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:38px;
+  text-align:center;
+  font-size:12px;
+  line-height:1.5;
+  color:#49463f;
+}
+.exhibition-image .stamp{
+  position:absolute;
+  top:16px;
+  left:16px;
+  background:var(--acid);
+  border:1px solid var(--ink);
+  padding:6px 8px 5px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-weight:700;
+}
+.exhibition-copy{
+  min-height:590px;
+  background:#fffdf8;
+  padding:27px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.exhibition-copy h3{
+  margin:10px 0 24px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3rem,5.6vw,6rem);
+  line-height:.86;
+  letter-spacing:-.055em;
+  font-weight:400;
+}
+.exhibition-copy .dek{
+  max-width:480px;
+  font-size:18px;
+  line-height:1.4;
+}
+.meta-table{
+  border-top:1px solid var(--rule);
+}
+.meta-row{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:20px;
+  padding:10px 0;
+  border-bottom:1px solid var(--soft-rule);
+  font-size:13px;
+}
+.meta-row strong{
+  text-transform:uppercase;
+  font-size:10px;
+  letter-spacing:.06em;
+}
+
+/* ---------- collection ---------- */
+
+.collection-intro{
+  display:grid;
+  grid-template-columns:1fr 2.2fr;
+  gap:30px;
+  margin-bottom:38px;
+}
+.collection-intro p{
+  grid-column:2;
+  margin:0;
+  max-width:850px;
+  font-size:20px;
+  line-height:1.35;
+  letter-spacing:-.02em;
+}
+.collection-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
+}
+.collection-item{
+  min-height:285px;
+  padding:17px;
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.collection-item:hover{background:#fffdf8}
+.collection-item .code{
+  font-family:"Courier New",monospace;
+  font-size:11px;
+}
+.collection-item h3{
+  margin:0 0 11px;
+  font-size:clamp(1.9rem,3vw,3.3rem);
+  line-height:.93;
+  letter-spacing:-.05em;
+}
+.collection-item p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.45;
+}
+
+/* ---------- field instruction ---------- */
+
+.field{
+  background:var(--acid);
+  border-bottom:1px solid var(--rule);
+  padding:74px 0 80px;
+}
+.field .kicker{margin-bottom:27px}
+.field blockquote{
+  margin:0;
+  max-width:1350px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3.3rem,7.5vw,8.5rem);
+  line-height:.86;
+  letter-spacing:-.06em;
+  font-weight:400;
+}
+.field blockquote strong{
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:800;
+  letter-spacing:-.07em;
+}
+
+/* ---------- field notes / editorial ---------- */
+
+.notes-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.note{
+  border-top:4px solid var(--ink);
+  padding-top:13px;
+}
+.note .type{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:700;
+}
+.note h3{
+  margin:23px 0 10px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2rem,3vw,3.2rem);
+  line-height:.96;
+  font-weight:400;
+  letter-spacing:-.035em;
+}
+.note p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+  max-width:430px;
+}
+
+/* ---------- contribute ---------- */
+
+.contribute{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:70px;
+}
+.contribute h2{
+  margin:10px 0 24px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3.2rem,6vw,7rem);
+  line-height:.87;
+  letter-spacing:-.06em;
+  font-weight:400;
+}
+.contribute-lede{
+  max-width:570px;
+  font-size:18px;
+  line-height:1.45;
+}
+.contribute-lede strong{
+  background:var(--acid);
+  padding:0 3px;
+}
+.protocol{
+  border-top:6px solid var(--ink);
+}
+.step{
+  display:grid;
+  grid-template-columns:55px 1fr;
+  gap:16px;
+  padding:15px 0;
+  border-bottom:1px solid var(--rule);
+  font-size:15px;
+  line-height:1.4;
+}
+.step .n{
+  font-family:"Courier New",monospace;
+  font-weight:700;
+  font-size:12px;
+}
+.mail{
+  display:block;
+  margin-top:26px;
+  padding:17px 18px;
+  background:var(--blue);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:clamp(1rem,1.8vw,1.4rem);
+  word-break:break-word;
+}
+.mail:hover{background:var(--ink)}
+.privacy-note{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.45;
+}
+
+/* ---------- institutional ---------- */
+
+.institution-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-left:1px solid var(--rule);
+  border-top:1px solid var(--rule);
+}
+.institution-cell{
+  min-height:165px;
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:17px;
+}
+.institution-cell .kicker{margin-bottom:30px}
+.institution-cell p{
+  margin:0;
+  font-size:14px;
+  line-height:1.45;
+}
+
+/* ---------- footer ---------- */
+
+footer{
+  padding:35px 0 55px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.6fr .7fr .7fr;
+  gap:32px;
+}
+.footer-wordmark{
+  font-size:clamp(2.2rem,4vw,4.8rem);
+  line-height:.82;
+  letter-spacing:-.065em;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.footer-col{
+  font-size:13px;
+  line-height:1.55;
+}
+.footer-col .kicker{margin-bottom:10px}
+.footer-col a{text-decoration:none}
+.footer-col a:hover{text-decoration:underline}
+.endnote{
+  margin-top:35px;
+  padding-top:15px;
+  border-top:1px solid var(--soft-rule);
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+
+/* ---------- about panel ---------- */
+
+.about-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:90;
+  background:rgba(20,20,20,.38);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+}
+
+.about-panel{
+  position:fixed;
+  z-index:100;
+  top:0;
+  right:0;
+  width:min(760px,92vw);
+  height:100dvh;
+  background:var(--paper);
+  border-left:1px solid var(--rule);
+  transform:translateX(100%);
+  transition:transform .28s cubic-bezier(.22,.61,.36,1);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+
+.about-panel.is-open{
+  transform:translateX(0);
+}
+
+.about-backdrop.is-open{
+  opacity:1;
+  pointer-events:auto;
+}
+
+body.about-open{
+  overflow:hidden;
+}
+
+.about-panel-head{
+  position:sticky;
+  top:0;
+  z-index:2;
+  background:rgba(244,241,232,.97);
+  border-bottom:1px solid var(--rule);
+}
+
+.about-panel-head-inner{
+  min-height:72px;
+  padding:15px 20px 14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:20px;
+}
+
+.about-panel-title{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:700;
+}
+
+.about-close{
+  border:1px solid var(--rule);
+  background:transparent;
+  min-width:82px;
+  min-height:36px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.about-close:hover{
+  background:var(--chrome-bg);
+  color:var(--chrome-fg);
+}
+
+.about-panel-body{
+  padding:34px 20px 56px;
+}
+
+.about-panel-display{
+  margin:0 0 42px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3.1rem,7vw,6.2rem);
+  line-height:.88;
+  letter-spacing:-.06em;
+  font-weight:400;
+}
+
+.about-panel-display span{
+  text-decoration:underline;
+  text-decoration-color:var(--blue);
+  text-decoration-thickness:.055em;
+  text-underline-offset:.08em;
+}
+
+.about-lede{
+  max-width:620px;
+  margin:0 0 48px;
+  font-size:clamp(1.35rem,2.4vw,2rem);
+  line-height:1.18;
+  letter-spacing:-.025em;
+}
+
+.about-block{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:25px;
+  padding:20px 0 24px;
+  border-top:1px solid var(--rule);
+}
+
+.about-block h3{
+  margin:0;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.about-block-copy{
+  max-width:510px;
+}
+
+.about-block-copy p{
+  margin:0 0 14px;
+  font-size:15px;
+  line-height:1.55;
+}
+
+.about-block-copy p:last-child{
+  margin-bottom:0;
+}
+
+.about-question{
+  margin:42px 0 0;
+  padding:22px;
+  background:var(--acid);
+  border:1px solid var(--rule);
+}
+
+.about-question .kicker{
+  margin-bottom:20px;
+}
+
+.about-question p{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2rem,4.2vw,4rem);
+  line-height:.96;
+  letter-spacing:-.045em;
+}
+
+.about-panel-footer{
+  margin-top:34px;
+  padding-top:14px;
+  border-top:1px solid var(--soft-rule);
+  color:var(--muted);
+  font-size:11px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+@media(max-width:620px){
+  .about-panel{
+    width:100vw;
+    border-left:0;
+  }
+  .about-block{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .about-panel-body{
+    padding-top:28px;
+  }
+}
+
+
+/* ---------- project context / meta layer ---------- */
+
+.meta-link{
+  appearance:none;
+  border:0;
+  background:none;
+  color:var(--muted);
+  padding:0;
+  cursor:pointer;
+  font:inherit;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+
+.meta-link:hover{
+  color:var(--blue);
+}
+
+.footer-meta-link{
+  margin-top:8px;
+  font-size:11px;
+}
+
+.meta-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:190;
+  background:rgba(20,20,20,.58);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease;
+}
+
+.meta-panel{
+  position:fixed;
+  z-index:200;
+  inset:5vh 5vw;
+  background:#111;
+  color:#f4f1e8;
+  border:1px solid #f4f1e8;
+  transform:translateY(16px);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease, transform .24s ease;
+  overflow:auto;
+}
+
+.meta-panel.is-open{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.meta-backdrop.is-open{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.meta-head{
+  position:sticky;
+  top:0;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:14px 18px;
+  background:#111;
+  border-bottom:1px solid rgba(244,241,232,.65);
+}
+
+.meta-head .kicker{
+  color:#f4f1e8;
+}
+
+.meta-close{
+  border:1px solid #f4f1e8;
+  color:#f4f1e8;
+  background:transparent;
+  min-height:35px;
+  padding:0 12px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.meta-close:hover{
+  background:#f4f1e8;
+  color:#111;
+}
+
+.meta-body{
+  width:min(calc(100% - 40px),1120px);
+  margin:0 auto;
+  padding:62px 0 80px;
+}
+
+.meta-display{
+  margin:0 0 28px;
+  max-width:950px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3.2rem,7vw,7.4rem);
+  line-height:.86;
+  letter-spacing:-.06em;
+  font-weight:400;
+}
+
+.meta-display em{
+  color:var(--acid);
+  font-style:normal;
+}
+
+.meta-lede{
+  max-width:780px;
+  margin:0 0 55px;
+  color:#d6d1c8;
+  font-size:clamp(1.25rem,2.1vw,1.85rem);
+  line-height:1.25;
+}
+
+.meta-section{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:35px;
+  padding:22px 0 28px;
+  border-top:1px solid rgba(244,241,232,.38);
+}
+
+.meta-section h3{
+  margin:0;
+  color:var(--acid);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+}
+
+.meta-copy{
+  max-width:700px;
+}
+
+.meta-copy p{
+  margin:0 0 15px;
+  color:#ddd8cf;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.meta-copy p:last-child{margin-bottom:0}
+
+.meta-definition{
+  margin-top:44px;
+  border:1px solid rgba(244,241,232,.7);
+  padding:22px;
+}
+
+.meta-definition .kicker{
+  color:var(--acid);
+  margin-bottom:18px;
+}
+
+.meta-definition p{
+  margin:0;
+  max-width:900px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.7rem,3.5vw,3.5rem);
+  line-height:1.03;
+  letter-spacing:-.035em;
+}
+
+@media(max-width:720px){
+  .meta-panel{inset:0}
+  .meta-section{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .meta-body{
+    width:min(calc(100% - 26px),1120px);
+    padding-top:42px;
+  }
+}
+
+/* ---------- mobile ---------- */
+
+.mobile-nav{display:none}
+
+@media(max-width:1050px){
+  .collection-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .why{min-height:230px}
+  .institution-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:850px){
+  .utility-right{display:none}
+  .header-row{align-items:flex-start;flex-direction:column;min-height:auto}
+  nav{justify-content:flex-start}
+  .hero,
+  .exhibition,
+  .contribute{
+    grid-template-columns:1fr;
+  }
+  .hero{min-height:auto}
+  .hero-side{
+    border-left:0;
+    border-top:1px solid var(--rule);
+    padding-left:0;
+    padding-top:22px;
+  }
+  .section-title,
+  .collection-intro{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+  .collection-intro p{grid-column:1}
+  .notes-grid{grid-template-columns:1fr}
+  .exhibition-image,.exhibition-copy{min-height:440px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-wordmark{grid-column:1/-1}
+}
+
+@media(max-width:560px){
+  .wrap{width:min(calc(100% - 26px),var(--max))}
+  .utility-left span:nth-child(2){display:none}
+  nav{font-size:13px;gap:7px 13px}
+  .hero{padding-top:34px}
+  .hero-caption{flex-direction:column;gap:12px}
+  .notice .wrap{align-items:flex-start;flex-direction:column;padding:10px 0}
+  .collection-grid{grid-template-columns:1fr}
+  .collection-item{min-height:220px}
+  .institution-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-wordmark{grid-column:auto}
+  .endnote{flex-direction:column;gap:8px}
+}
+
+
+/* ---------- future.museumofordinarylife.org ---------- */
+.future-prototype{
+  background:var(--acid); border-bottom:1px solid var(--rule); font-size:10px;
+  font-weight:700; letter-spacing:.045em;
+}
+.future-prototype .wrap{min-height:32px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.future-prototype a{text-decoration:none;border-bottom:1px solid var(--ink)}
+.future-action{appearance:none;border:0;background:none;color:inherit;padding:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.future-action:hover{color:var(--blue)}
+.hero.future-hero h1 em{font-style:normal;color:#2f6651}
+.future-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.future-button{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:0 14px;border:1px solid var(--rule);background:transparent;color:inherit;text-decoration:none;font-size:12px;font-weight:700;cursor:pointer}
+.future-button.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.future-button.acid{background:var(--acid)}
+.future-button:hover{background:var(--chrome-bg);color:var(--chrome-fg);border-color:var(--chrome-bg)}
+
+.future-status-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.future-status{min-height:180px;padding:16px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.future-status .kicker{margin-bottom:26px}.future-status p{margin:0;font-size:14px;line-height:1.45}
+
+.locations-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.location-card{min-height:410px;padding:19px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between}
+.location-card .topline{display:flex;justify-content:space-between;gap:20px}.location-open{display:inline-flex;align-items:center;gap:7px;font-size:10px;text-transform:uppercase;letter-spacing:.07em;font-weight:700}
+.location-open:before{content:"";width:7px;height:7px;border-radius:50%;background:#2f6651;border:1px solid var(--ink)}
+.location-card h3{margin:58px 0 10px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.8rem,5vw,5.2rem);line-height:.9;letter-spacing:-.055em;font-weight:400}
+.location-card .former{color:var(--muted);font-size:13px}.location-meta{display:grid;grid-template-columns:1fr 1fr;gap:22px;border-top:1px solid var(--rule);padding-top:13px;font-size:12px;line-height:1.45}
+.future-visit-note{background:#2f6651;color:#fff;padding:58px 0 64px;border-bottom:1px solid var(--rule)}
+.future-visit-note blockquote{margin:0;max-width:1260px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.8rem,6vw,6.5rem);line-height:.9;letter-spacing:-.055em}
+
+.future-artifact-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.future-artifact{min-height:500px;padding:14px;border:0;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:transparent;color:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column}
+.future-artifact:hover{background:#fffdf8}.artifact-visual{height:255px;border:1px solid var(--rule);background:#d8d2c5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.artifact-visual:after{content:"";position:absolute;inset:12px;border:1px solid rgba(20,20,20,.2)}
+.artifact-tag{position:absolute;top:8px;left:8px;background:var(--acid);border:1px solid var(--rule);padding:5px 7px 4px;font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;z-index:2}
+.future-artifact .code{font-family:"Courier New",monospace;color:var(--muted);font-size:10px;margin-top:13px}.future-artifact h3{margin:20px 0 9px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.9rem,2.8vw,3rem);line-height:.95;letter-spacing:-.04em;font-weight:400}
+.future-artifact p{margin:0;color:var(--muted);font-size:13px;line-height:1.48}.future-artifact .artifact-foot{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;gap:14px;font-size:10px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+.receipt-object{width:38%;height:76%;background:#faf8ef;border:1px solid #817c72;box-shadow:8px 8px 0 rgba(20,20,20,.08);padding:20px 12px;z-index:1}.receipt-object i,.paper-object i{display:block;height:2px;background:#77736b;margin:9px 0;opacity:.7}
+.badge-object{width:50%;height:40%;border:1px solid #655f58;background:#ece8dd;transform:rotate(-2deg);padding:18px;z-index:1}.badge-object:before{content:"";display:block;width:34px;height:34px;border-radius:50%;background:#aaa59c;margin-bottom:18px}.badge-object:after{content:"ACCESS / STAFF";font-size:10px;font-weight:700;letter-spacing:.08em}
+.gate-object{width:60%;height:35%;border:7px solid #77756e;background:#96958e;position:relative;z-index:1}.gate-object:before{content:"";position:absolute;top:20%;left:12%;width:36%;height:52%;background:#202522}.gate-object:after{content:"";position:absolute;top:38%;right:-44%;width:45%;height:7px;background:#77756e}
+.paper-object{width:48%;height:72%;background:#f4f0e4;border:1px solid #77736b;padding:18px;transform:rotate(1.5deg);z-index:1}
+.key-object{width:150px;height:44px;border:13px solid #7d7b74;border-radius:50px;position:relative;z-index:1}.key-object:after{content:"";position:absolute;width:130px;height:16px;background:#7d7b74;left:116px;top:1px}
+.screen-object{width:32%;height:72%;border:7px solid #3d403d;border-radius:22px;background:#d9ded9;position:relative;z-index:1}.screen-object:before{content:"12 reminders\\A4 messages\\Aupdate complete";white-space:pre;position:absolute;top:25%;left:12%;right:12%;font-size:9px;line-height:2.2}
+
+.archive-controls{display:grid;grid-template-columns:2fr 1fr auto;gap:10px;margin-bottom:24px}.archive-controls input,.archive-controls select{min-height:45px;border:1px solid var(--rule);background:#fffdf8;padding:0 12px;border-radius:0}.archive-count{border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;min-width:120px;font-size:11px;font-weight:700}
+.contribution-stream{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.stream-item{min-height:290px;padding:17px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between}.stream-item h3{margin:35px 0 10px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,3vw,3.3rem);line-height:.95;font-weight:400;letter-spacing:-.04em}.stream-item p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}.stream-meta{border-top:1px solid var(--soft-rule);padding-top:10px;margin-top:20px;font-size:10px;line-height:1.4;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+
+.virtual-intro{background:linear-gradient(to bottom,var(--paper),#e4e9df)}
+.virtual-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:48px}.virtual-layout h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3.5rem,7vw,7.8rem);line-height:.87;letter-spacing:-.06em;font-weight:400}.virtual-copy{border-left:1px solid var(--rule);padding-left:24px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}.virtual-copy p{margin:0;font-size:18px;line-height:1.45}
+.mode-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}.mode-card{min-height:285px;padding:16px;border:0;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:transparent;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.mode-card:hover,.mode-card.active{background:var(--acid)}.mode-card h3{margin:45px 0 10px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,3vw,3.1rem);line-height:.95;font-weight:400}.mode-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+.virtual-stage{min-height:610px;background:#151816;color:#f1eee4;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}.stage-room{position:absolute;inset:7% 6%;border:1px solid rgba(241,238,228,.62);overflow:hidden}.stage-wall{position:absolute;inset:0;background:linear-gradient(135deg,#20251f,#111411)}.stage-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(241,238,228,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(241,238,228,.07) 1px,transparent 1px);background-size:50px 50px;transform:perspective(700px) rotateX(62deg) translateY(45%);transform-origin:center bottom}.stage-node{position:absolute;border:1px solid rgba(241,238,228,.6);background:rgba(241,238,228,.05);color:#f1eee4;padding:14px;text-align:left;cursor:pointer}.stage-node:hover{background:rgba(221,255,87,.14);border-color:var(--acid)}.stage-node strong{display:block;margin-top:8px;font-family:Georgia,"Times New Roman",serif;font-size:1.45rem;font-weight:400}.stage-a{left:10%;top:22%;width:21%;height:24%}.stage-b{right:10%;top:17%;width:27%;height:33%}.stage-c{left:38%;bottom:11%;width:27%;height:19%}.stage-caption{position:absolute;left:7%;bottom:4%;max-width:650px;color:#d5d0c6;font-size:13px;line-height:1.5}.stage-actions{position:absolute;right:7%;bottom:4%;display:flex;gap:8px}.stage-actions button{border:1px solid #f1eee4;background:transparent;color:#f1eee4;padding:9px 12px;cursor:pointer}.stage-actions button:hover{background:#f1eee4;color:#111}.virtual-privacy{padding:15px 0;border-bottom:1px solid var(--rule);font-size:11px;color:var(--muted)}.virtual-privacy .wrap{display:flex;justify-content:space-between;gap:24px}
+
+.future-form{border-top:6px solid var(--rule)}.future-form-row{padding:16px 0 18px;border-bottom:1px solid var(--rule)}.future-form-row label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;margin-bottom:8px}.future-form-row input[type=text],.future-form-row input[type=email],.future-form-row input[type=date],.future-form-row textarea{width:100%;border:1px solid var(--rule);background:#fffdf8;padding:11px 12px;min-height:45px}.future-form-row textarea{min-height:115px;resize:vertical}.future-drop{min-height:170px;border:1px dashed var(--rule);background:#fffdf8;display:flex!important;align-items:center;justify-content:center;text-align:center;padding:20px;cursor:pointer}.future-drop input{display:none}.permission-row{display:flex!important;gap:10px;align-items:flex-start;border:1px solid var(--soft-rule);padding:10px;background:#fffdf8;margin-bottom:7px;text-transform:none!important;letter-spacing:0!important;font-weight:400!important}.future-submit{width:100%;min-height:56px;border:0;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin-top:20px}.future-receipt{display:none;margin-top:22px;padding:22px;background:#2f6651;color:#fff}.future-receipt h3{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:2.3rem;font-weight:400}.future-receipt-code{font-family:"Courier New",monospace;margin-top:15px;font-size:11px}
+
+.future-overlay{position:fixed;inset:0;z-index:300;background:rgba(20,20,20,.58);opacity:0;pointer-events:none;transition:opacity .2s}.future-overlay.open{opacity:1;pointer-events:auto}.interface-panel{position:fixed;z-index:310;top:0;right:0;width:min(620px,100vw);height:100dvh;background:var(--paper);border-left:1px solid var(--rule);transform:translateX(100%);transition:transform .25s ease;overflow:auto}.interface-panel.open{transform:none}.interface-head{position:sticky;top:0;z-index:2;background:rgba(244,241,232,.98);border-bottom:1px solid var(--rule);padding:13px 16px;display:flex;justify-content:space-between;align-items:center}.interface-close{border:1px solid var(--rule);background:transparent;padding:8px 11px;cursor:pointer;font-weight:700}.interface-close:hover{background:var(--chrome-bg);color:var(--chrome-fg)}.interface-body{padding:28px 18px 55px}.interface-body h2{margin:0 0 16px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,6vw,5.5rem);line-height:.88;letter-spacing:-.055em;font-weight:400}.interface-body>p{font-size:16px;line-height:1.5;color:var(--muted)}.interface-targets{margin-top:28px;border-top:1px solid var(--rule)}.interface-target{width:100%;border:0;border-bottom:1px solid var(--rule);background:transparent;padding:15px 0;display:grid;grid-template-columns:18px 1fr auto;gap:12px;text-align:left;cursor:pointer;align-items:center}.interface-target:hover{background:#fffdf8}.target-dot{width:10px;height:10px;border:1px solid var(--rule);border-radius:50%;background:#2f6651}.interface-target strong{display:block;font-size:14px}.interface-target small{color:var(--muted);font-size:11px}.target-state{font-size:9px;text-transform:uppercase;letter-spacing:.06em}.interface-options{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}.interface-option{padding:12px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:12px;line-height:1.4}.handoff{display:none;margin-top:24px;padding:19px;background:var(--acid);border:1px solid var(--rule)}.handoff h3{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:2.2rem;font-weight:400}.handoff p{margin:0;font-size:13px;line-height:1.45}
+
+.artifact-modal{position:fixed;z-index:320;inset:4vh 5vw;background:var(--paper);border:1px solid var(--rule);opacity:0;transform:translateY(14px);pointer-events:none;transition:.2s;overflow:auto}.artifact-modal.open{opacity:1;transform:none;pointer-events:auto}.artifact-modal-head{position:sticky;top:0;background:rgba(244,241,232,.98);border-bottom:1px solid var(--rule);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;z-index:2}.artifact-modal-grid{display:grid;grid-template-columns:1fr 1fr;min-height:calc(92vh - 58px)}.artifact-modal-visual{background:#d8d2c5;border-right:1px solid var(--rule);display:flex;align-items:center;justify-content:center;padding:50px}.artifact-modal-copy{padding:38px}.artifact-modal-copy h2{margin:10px 0 20px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,5.6vw,6rem);line-height:.88;letter-spacing:-.055em;font-weight:400}.artifact-modal-copy p{font-size:16px;line-height:1.5}.artifact-data{margin-top:30px;border-top:1px solid var(--rule)}.artifact-data-row{display:grid;grid-template-columns:130px 1fr;gap:20px;border-bottom:1px solid var(--soft-rule);padding:10px 0;font-size:12px}.artifact-data-row strong{font-size:9px;text-transform:uppercase;letter-spacing:.06em}.artifact-quote{margin-top:28px;background:var(--acid);padding:18px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.5rem,2.6vw,2.5rem);line-height:1.05}
+
+@media(max-width:1100px){.future-status-grid{grid-template-columns:repeat(2,1fr)}.future-artifact-grid,.contribution-stream{grid-template-columns:repeat(2,1fr)}.mode-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:850px){.future-prototype .wrap{align-items:flex-start;flex-direction:column;padding:8px 0}.locations-grid,.virtual-layout,.artifact-modal-grid{grid-template-columns:1fr}.virtual-copy{border-left:0;border-top:1px solid var(--rule);padding-left:0;padding-top:20px}.artifact-modal{inset:0}.artifact-modal-visual{border-right:0;border-bottom:1px solid var(--rule);min-height:400px}.archive-controls{grid-template-columns:1fr 1fr}.virtual-privacy .wrap{flex-direction:column}}
+@media(max-width:560px){.future-status-grid,.future-artifact-grid,.contribution-stream,.mode-grid,.archive-controls{grid-template-columns:1fr}.location-meta{grid-template-columns:1fr}.stage-actions{left:7%;right:auto}.stage-caption{bottom:13%}}
+
+
+/* ==========================================================================
+   FUTURE MUSEUM — refined visual system
+   ========================================================================== */
+
+:root{
+  --paper:#f3eee4;
+  --paper2:#e7dfd2;
+  --ink:#151519;
+  --muted:#665f62;
+  --rule:#1a191d;
+  --soft-rule:#bdb4aa;
+  --blue:#3155ff;
+  --acid:#d9ff49;
+
+  --future-orange:#ef6648;
+  --future-teal:#347865;
+  --future-violet:#8177b8;
+  --future-lilac:#e7e0f2;
+  --future-sky:#dceaff;
+  --future-peach:#f2ddd1;
+  --future-mint:#dce9df;
+
+  --max:1480px;
+}
+
+body{
+  background:
+    linear-gradient(rgba(21,21,25,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(21,21,25,.022) 1px,transparent 1px),
+    var(--paper);
+  background-size:32px 32px;
+}
+
+::selection{
+  background:var(--acid);
+  color:var(--ink);
+}
+
+/* ---------- future marker + system strip ---------- */
+
+.future-prototype{
+  background:var(--ink);
+  color:var(--paper);
+  border-bottom:1px solid var(--rule);
+  letter-spacing:.055em;
+}
+
+.future-prototype .wrap{
+  min-height:34px;
+}
+
+.future-prototype a{
+  color:var(--acid);
+  border-bottom-color:var(--acid);
+}
+
+.future-prototype a:hover{
+  color:#fff;
+}
+
+.utility{
+  background:#f8f4eb;
+}
+
+.live:before{
+  background:var(--future-teal);
+  box-shadow:0 0 0 3px rgba(52,120,101,.10);
+}
+
+.future-action{
+  color:var(--blue);
+  text-decoration-thickness:1px;
+}
+
+/* ---------- wordmark / header ---------- */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(243,238,228,.96);
+  backdrop-filter:blur(8px);
+}
+
+.header-row{
+  min-height:114px;
+}
+
+.wordmark{
+  max-width:none;
+  min-width:0;
+  flex:1 1 auto;
+}
+
+.wordmark .name{
+  white-space:nowrap;
+  font-size:clamp(2.35rem,4.25vw,5.65rem);
+}
+
+.wordmark-of{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1em;
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:-.045em;
+  text-transform:none;
+}
+
+nav{
+  flex:0 0 auto;
+}
+
+nav a{
+  position:relative;
+}
+
+nav a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-4px;
+  height:3px;
+  background:transparent;
+}
+
+nav a:nth-child(1):hover:after{background:var(--future-orange)}
+nav a:nth-child(2):hover:after{background:var(--future-violet)}
+nav a:nth-child(3):hover:after{background:var(--blue)}
+nav a:nth-child(4):hover:after{background:var(--future-teal)}
+nav a:nth-child(5):hover:after{background:var(--acid)}
+nav a:nth-child(6):hover:after{background:var(--future-orange)}
+
+nav a:hover{
+  border-color:transparent;
+}
+
+/* ---------- hero ---------- */
+
+.hero.future-hero{
+  position:relative;
+  padding-top:58px;
+}
+
+.hero.future-hero:before{
+  content:"";
+  position:absolute;
+  top:31px;
+  right:34.5%;
+  width:46px;
+  height:7px;
+  background:var(--future-orange);
+}
+
+.hero.future-hero h1{
+  color:var(--ink);
+}
+
+.hero.future-hero h1 em{
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-weight:400;
+  color:var(--future-teal);
+}
+
+.hero-caption p{
+  padding-top:11px;
+  border-top:1px solid var(--soft-rule);
+}
+
+.hero-caption p:first-child{
+  border-top-color:var(--future-orange);
+}
+
+.hero-caption p:last-child{
+  border-top-color:var(--future-teal);
+}
+
+.hero-side{
+  position:relative;
+}
+
+.hero-side:after{
+  content:"";
+  position:absolute;
+  left:-1px;
+  top:0;
+  width:4px;
+  height:76px;
+  background:var(--future-orange);
+  transform:translateX(-2px);
+}
+
+.open-call{
+  background:rgba(255,255,255,.30);
+  border-top-color:var(--future-teal);
+  padding:16px 16px 17px;
+  outline:1px solid var(--soft-rule);
+  outline-offset:-1px;
+}
+
+.open-call .kicker{
+  color:var(--future-teal);
+}
+
+.future-button{
+  border-width:1px;
+}
+
+.future-button.primary{
+  background:var(--blue);
+}
+
+.future-button.acid{
+  background:var(--acid);
+}
+
+.future-button:hover{
+  background:var(--ink);
+}
+
+/* ---------- network notice ---------- */
+
+.notice{
+  background:var(--blue);
+}
+
+.notice strong{
+  font-family:"Courier New",monospace;
+}
+
+.notice a{
+  border-bottom:1px solid rgba(255,255,255,.65);
+}
+
+/* ---------- section typography ---------- */
+
+.section-title .kicker{
+  color:var(--future-teal);
+}
+
+.section-title h2{
+  text-wrap:balance;
+}
+
+/* ---------- museum status: mostly museum, lightly color-coded ---------- */
+
+.future-status-grid{
+  border-top-color:var(--rule);
+  border-left-color:var(--rule);
+}
+
+.future-status{
+  position:relative;
+  background:rgba(255,255,255,.18);
+  padding-top:23px;
+}
+
+.future-status:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:var(--blue);
+}
+
+.future-status:nth-child(2):before{background:var(--future-orange)}
+.future-status:nth-child(3):before{background:var(--future-teal)}
+.future-status:nth-child(4):before{background:var(--future-violet)}
+.future-status:nth-child(5):before{background:var(--acid)}
+
+.future-status .kicker{
+  color:var(--muted);
+}
+
+/* ---------- locations ---------- */
+
+.locations-grid{
+  gap:18px;
+  border:0;
+}
+
+.location-card{
+  position:relative;
+  border:1px solid var(--rule);
+  background:#f8f4eb;
+  overflow:hidden;
+}
+
+.location-card:before{
+  position:absolute;
+  top:14px;
+  right:16px;
+  font-family:"Courier New",monospace;
+  font-size:10px;
+  letter-spacing:.08em;
+  color:var(--muted);
+}
+
+.location-card:nth-child(1):before{content:"SITE / 01"}
+.location-card:nth-child(2):before{content:"SITE / 02"}
+.location-card:nth-child(3):before{content:"SITE / 03"}
+.location-card:nth-child(4):before{content:"SITE / 04"}
+
+.location-card:nth-child(1){box-shadow:inset 5px 0 0 var(--future-orange)}
+.location-card:nth-child(2){box-shadow:inset 5px 0 0 var(--future-teal)}
+.location-card:nth-child(3){box-shadow:inset 5px 0 0 var(--future-violet)}
+.location-card:nth-child(4){box-shadow:inset 5px 0 0 var(--blue)}
+
+.location-card:hover{
+  background:#fffdf8;
+}
+
+.location-open:before{
+  background:var(--future-teal);
+}
+
+.location-meta{
+  background:rgba(231,224,242,.24);
+  margin:0 -19px -19px;
+  padding:14px 19px 19px;
+}
+
+/* ---------- humane museum statement ---------- */
+
+.future-visit-note{
+  background:var(--future-teal);
+  position:relative;
+  overflow:hidden;
+}
+
+.future-visit-note:after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  right:5%;
+  top:50%;
+  transform:translateY(-50%);
+  border:1px solid rgba(255,255,255,.20);
+  border-radius:50%;
+}
+
+.future-visit-note blockquote{
+  position:relative;
+  z-index:1;
+}
+
+/* ---------- virtual museum: one deliberately 'future' zone ---------- */
+
+.virtual-intro{
+  background:
+    radial-gradient(circle at 85% 20%,rgba(129,119,184,.22),transparent 24rem),
+    #1a1920;
+  color:var(--paper);
+}
+
+.virtual-intro .kicker{
+  color:var(--acid);
+}
+
+.virtual-layout h2{
+  color:#f6f0e6;
+}
+
+.virtual-copy{
+  border-left-color:rgba(246,240,230,.42);
+}
+
+.virtual-copy p{
+  color:#d8d1c7;
+}
+
+.virtual-intro .future-button.primary{
+  background:var(--acid);
+  color:var(--ink);
+  border-color:var(--acid);
+}
+
+.virtual-intro .future-button.acid{
+  background:transparent;
+  color:#fff;
+  border-color:#fff;
+}
+
+.mode-grid{
+  gap:12px;
+  border:0;
+}
+
+.mode-card{
+  border:1px solid var(--rule);
+  background:#f8f4eb;
+}
+
+.mode-card:nth-child(1){box-shadow:inset 0 5px 0 var(--future-orange)}
+.mode-card:nth-child(2){box-shadow:inset 0 5px 0 var(--future-violet)}
+.mode-card:nth-child(3){box-shadow:inset 0 5px 0 var(--blue)}
+.mode-card:nth-child(4){box-shadow:inset 0 5px 0 var(--future-teal)}
+
+.mode-card:hover,
+.mode-card.active{
+  background:var(--future-lilac);
+}
+
+.mode-card.active{
+  outline:2px solid var(--future-violet);
+  outline-offset:-2px;
+}
+
+.virtual-stage{
+  background:
+    radial-gradient(circle at 50% 55%,rgba(49,85,255,.12),transparent 26rem),
+    #121217;
+}
+
+.stage-room{
+  border-color:rgba(217,255,73,.58);
+}
+
+.stage-grid{
+  background-image:
+    linear-gradient(rgba(217,255,73,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(49,85,255,.10) 1px,transparent 1px);
+}
+
+.stage-node{
+  border-color:rgba(255,255,255,.55);
+  background:rgba(18,18,23,.78);
+}
+
+.stage-node:hover{
+  background:var(--acid);
+  color:var(--ink);
+  border-color:var(--acid);
+}
+
+.stage-actions button{
+  border-color:var(--acid);
+  color:var(--acid);
+}
+
+.stage-actions button:hover{
+  background:var(--acid);
+  color:var(--ink);
+}
+
+.virtual-privacy{
+  background:#121217;
+}
+
+/* ---------- archive / artifact cards ---------- */
+
+.archive-controls input,
+.archive-controls select{
+  background:#f8f4eb;
+}
+
+.future-artifact-grid{
+  gap:16px;
+  border:0;
+}
+
+.future-artifact{
+  border:1px solid var(--rule);
+  background:#f8f4eb;
+}
+
+.future-artifact:hover{
+  background:#fffdf8;
+  transform:translateY(-2px);
+}
+
+.artifact-visual{
+  border:0;
+  border-bottom:1px solid var(--rule);
+  background:var(--future-sky);
+}
+
+.future-artifact:nth-child(2) .artifact-visual{background:var(--future-peach)}
+.future-artifact:nth-child(3) .artifact-visual{background:var(--future-mint)}
+.future-artifact:nth-child(4) .artifact-visual{background:var(--future-lilac)}
+.future-artifact:nth-child(5) .artifact-visual{background:#eee3ce}
+.future-artifact:nth-child(6) .artifact-visual{background:#dfe4e8}
+
+.artifact-tag{
+  background:var(--paper);
+}
+
+.future-artifact .code{
+  color:var(--future-teal);
+}
+
+/* ---------- category collection grid ---------- */
+
+.collection-item{
+  position:relative;
+  background:rgba(255,255,255,.12);
+}
+
+.collection-item:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  height:4px;
+  width:48px;
+  background:var(--blue);
+}
+
+.collection-item:nth-child(2):before{background:var(--future-orange)}
+.collection-item:nth-child(3):before{background:var(--future-teal)}
+.collection-item:nth-child(4):before{background:var(--future-violet)}
+.collection-item:nth-child(5):before{background:var(--acid)}
+.collection-item:nth-child(6):before{background:var(--future-orange)}
+.collection-item:nth-child(7):before{background:var(--future-teal)}
+.collection-item:nth-child(8):before{background:var(--blue)}
+
+/* ---------- field instruction stays the memorable loud moment ---------- */
+
+.field{
+  background:var(--acid);
+}
+
+/* ---------- recent contributions ---------- */
+
+.contribution-stream{
+  gap:0;
+}
+
+.stream-item{
+  background:rgba(255,255,255,.14);
+  position:relative;
+}
+
+.stream-item:nth-child(3n+1){box-shadow:inset 0 4px 0 var(--future-orange)}
+.stream-item:nth-child(3n+2){box-shadow:inset 0 4px 0 var(--future-teal)}
+.stream-item:nth-child(3n){box-shadow:inset 0 4px 0 var(--future-violet)}
+
+/* ---------- field notes ---------- */
+
+.note:nth-child(1){border-top-color:var(--future-orange)}
+.note:nth-child(2){border-top-color:var(--future-teal)}
+.note:nth-child(3){border-top-color:var(--future-violet)}
+
+/* ---------- future contribution flow ---------- */
+
+.contribute{
+  align-items:start;
+}
+
+.future-normal{
+  background:var(--future-lilac);
+}
+
+.future-form{
+  background:#f8f4eb;
+  padding:0 20px 20px;
+  border:1px solid var(--rule);
+  border-top:6px solid var(--blue);
+}
+
+.future-form-row input[type=text],
+.future-form-row input[type=email],
+.future-form-row input[type=date],
+.future-form-row textarea{
+  background:#fffdf8;
+}
+
+.future-drop{
+  background:
+    linear-gradient(rgba(49,85,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(49,85,255,.035) 1px,transparent 1px),
+    #fffdf8;
+  background-size:20px 20px;
+  border-color:var(--future-violet);
+}
+
+.permission-row:has(input:checked){
+  background:var(--future-lilac);
+}
+
+.future-submit{
+  background:var(--blue);
+}
+
+.future-submit:hover{
+  background:var(--chrome-bg);
+}
+
+.future-receipt{
+  background:var(--future-teal);
+}
+
+/* ---------- institution facts ---------- */
+
+.institution-cell:nth-child(1){box-shadow:inset 0 4px 0 var(--future-orange)}
+.institution-cell:nth-child(2){box-shadow:inset 0 4px 0 var(--future-teal)}
+.institution-cell:nth-child(3){box-shadow:inset 0 4px 0 var(--future-violet)}
+.institution-cell:nth-child(4){box-shadow:inset 0 4px 0 var(--blue)}
+
+/* ---------- About panel ---------- */
+
+.about-panel{
+  background:var(--paper);
+}
+
+.about-panel-head{
+  background:rgba(231,224,242,.97);
+}
+
+.about-panel-display span{
+  text-decoration-color:var(--future-orange);
+}
+
+/* ---------- interface handoff ---------- */
+
+.future-overlay{
+  background:rgba(21,21,25,.66);
+  backdrop-filter:blur(3px);
+}
+
+.interface-panel{
+  background:#f7f2e8;
+}
+
+.interface-head{
+  background:var(--future-sky);
+}
+
+.interface-target:hover{
+  background:var(--future-lilac);
+}
+
+.target-dot{
+  background:var(--future-teal);
+}
+
+.interface-option{
+  background:rgba(255,255,255,.18);
+}
+
+.handoff{
+  background:var(--acid);
+}
+
+/* ---------- artifact detail modal ---------- */
+
+.artifact-modal{
+  background:#f8f4eb;
+}
+
+.artifact-modal-head{
+  background:var(--future-lilac);
+}
+
+.artifact-modal-visual{
+  background:
+    linear-gradient(rgba(49,85,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(49,85,255,.04) 1px,transparent 1px),
+    var(--future-sky);
+  background-size:24px 24px;
+}
+
+.artifact-quote{
+  background:var(--acid);
+}
+
+/* ---------- context panel ---------- */
+
+.meta-panel{
+  background:
+    radial-gradient(circle at 84% 10%,rgba(49,85,255,.14),transparent 28rem),
+    #111116;
+}
+
+.meta-section h3{
+  color:var(--acid);
+}
+
+/* ---------- footer ---------- */
+
+footer{
+  background:#17171c;
+  color:#f3eee4;
+  border-top:1px solid var(--rule);
+}
+
+.footer-wordmark{
+  color:#f3eee4;
+}
+
+.footer-wordmark .wordmark-of{
+  color:var(--acid);
+}
+
+.footer-col{
+  color:#d1cac0;
+}
+
+.footer-col .kicker{
+  color:var(--future-sky);
+}
+
+.footer-col a,
+footer .future-action{
+  color:#f3eee4;
+}
+
+.footer-col a:hover,
+footer .future-action:hover{
+  color:var(--acid);
+}
+
+.endnote{
+  color:#a9a29a;
+  border-top-color:#45444b;
+}
+
+/* ---------- responsive ---------- */
+
+@media(max-width:1180px){
+  .wordmark .name{
+    font-size:clamp(2.15rem,3.9vw,4.25rem);
+  }
+}
+
+@media(max-width:850px){
+  header{
+    position:relative;
+  }
+
+  .wordmark{
+    width:100%;
+  }
+
+  .wordmark .name{
+    white-space:normal;
+    font-size:clamp(2.3rem,7.3vw,3.8rem);
+  }
+
+  .hero.future-hero:before{
+    display:none;
+  }
+
+  .locations-grid,
+  .future-artifact-grid,
+  .mode-grid{
+    gap:0;
+  }
+}
+
+@media(max-width:560px){
+  .wordmark .name{
+    font-size:clamp(2rem,9vw,2.8rem);
+  }
+
+  .future-prototype .wrap{
+    gap:8px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *:before,
+  *:after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
+
+
+/* ==========================================================================\n   UI collision / responsive fixes\n   ========================================================================== */
+
+/* Decorative SITE labels were competing with the actual OPEN state.\n   Keep the location cards clean and let real UI information win. */
+.location-card:before{
+  content:none!important;
+  display:none!important;
+}
+
+/* Give the location header enough room and keep status aligned reliably. */
+.location-card .topline{
+  align-items:flex-start;
+  min-width:0;
+}
+
+.location-card .topline .kicker{
+  min-width:0;
+  padding-right:12px;
+}
+
+.location-open{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+/* Keep the virtual-stage controls and caption inside the framed room. */
+.stage-caption{
+  bottom:9%;
+  max-width:min(650px,56%);
+  z-index:4;
+}
+
+.stage-actions{
+  bottom:8.5%;
+  z-index:5;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  max-width:46%;
+}
+
+.stage-actions button{
+  white-space:nowrap;
+}
+
+/* Reserve a little more breathing room at the bottom of the framed stage. */
+.stage-room{
+  inset:7% 6% 8%;
+}
+
+@media(max-width:900px){
+  .stage-caption{
+    bottom:15%;
+    max-width:72%;
+  }
+
+  .stage-actions{
+    left:7%;
+    right:auto;
+    bottom:9%;
+    max-width:86%;
+    justify-content:flex-start;
+  }
+}
+
+@media(max-width:560px){
+  .stage-room{
+    inset:5% 4% 5%;
+  }
+
+  .stage-caption{
+    left:6%;
+    right:6%;
+    bottom:21%;
+    max-width:none;
+  }
+
+  .stage-actions{
+    left:6%;
+    right:6%;
+    bottom:7%;
+    max-width:none;
+    gap:7px;
+  }
+
+  .stage-actions button{
+    flex:1 1 180px;
+  }
+}
+
+
+/* ==========================================================================
+   FUTURE MUSEUM — accessibility, theme, orientation & distributed network
+   ========================================================================== */
+
+:root{
+  color-scheme:light dark;
+  --surface:#f8f4eb;
+  --surface-soft:#ebe4d9;
+  --focus:#3155ff;
+  --action-blue:#3155ff;
+  --panel-head-bg:rgba(243,238,228,.98);
+}
+
+.skip-link{
+  position:fixed;
+  z-index:1000;
+  top:10px;
+  left:10px;
+  transform:translateY(-160%);
+  padding:10px 14px;
+  background:var(--chrome-bg);
+  color:var(--chrome-fg);
+  border:2px solid var(--chrome-fg);
+  text-decoration:none;
+  font-weight:700;
+}
+.skip-link:focus{transform:translateY(0)}
+
+:where(a,button,summary,input,select,textarea,[tabindex]):focus-visible{
+  outline:3px solid var(--focus);
+  outline-offset:3px;
+}
+
+:where(section,[id]){scroll-margin-top:34px}
+
+.utility-right{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.theme-control{
+  display:inline-flex;
+  align-items:stretch;
+  border:1px solid var(--rule);
+  white-space:nowrap;
+}
+.theme-control button{
+  appearance:none;
+  border:0;
+  border-right:1px solid var(--rule);
+  background:transparent;
+  color:inherit;
+  min-height:27px;
+  padding:3px 7px;
+  cursor:pointer;
+  font-size:11px;
+  font-weight:700;
+}
+.theme-control button:last-child{border-right:0}
+.theme-control button:hover{background:var(--surface-soft)}
+.theme-control button[aria-pressed="true"]{
+  background:var(--ink);
+  color:var(--paper);
+}
+
+.language-menu{position:relative}
+.language-menu summary{
+  cursor:pointer;
+  list-style:none;
+  font-weight:700;
+  border-bottom:1px solid currentColor;
+  padding:3px 0;
+}
+.language-menu summary::-webkit-details-marker{display:none}
+.language-menu summary::after{content:" +";font-weight:400}
+.language-menu[open] summary::after{content:" −"}
+.language-menu-panel{
+  position:absolute;
+  z-index:80;
+  right:0;
+  top:calc(100% + 9px);
+  width:min(330px,calc(100vw - 28px));
+  padding:14px;
+  background:var(--paper);
+  border:1px solid var(--rule);
+  box-shadow:4px 4px 0 var(--ink);
+  font-size:12px;
+  line-height:1.45;
+}
+.language-menu-panel p{margin:7px 0 0;color:var(--muted)}
+
+.future-quick-start{
+  padding:28px 0 32px;
+  border-bottom:1px solid var(--rule);
+}
+.future-quick-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:30px;
+  margin-bottom:18px;
+}
+.future-quick-head p{
+  margin:0;
+  max-width:700px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+.future-quick-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.future-quick-card{
+  min-height:180px;
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:16px;
+  align-items:end;
+  padding:18px;
+  border:1px solid var(--rule);
+  background:var(--surface);
+  text-decoration:none;
+  position:relative;
+}
+.future-quick-card:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:var(--future-orange);
+}
+.future-quick-card:nth-child(2):before{background:var(--future-teal)}
+.future-quick-card:nth-child(3):before{background:var(--future-violet)}
+.future-quick-card:hover{transform:translateY(-2px);background:var(--paper)}
+.future-quick-card svg{
+  width:70px;
+  height:90px;
+  align-self:start;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.55;
+  vector-effect:non-scaling-stroke;
+}
+.future-quick-card .quick-label{
+  display:block;
+  margin-bottom:6px;
+  color:var(--muted);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:700;
+}
+.future-quick-card h2{
+  margin:0 0 8px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.55rem,2.25vw,2.4rem);
+  line-height:.98;
+  letter-spacing:-.035em;
+  font-weight:400;
+}
+.future-quick-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.45;
+}
+
+.future-network{
+  background:var(--chrome-bg);
+  color:var(--chrome-fg);
+}
+.future-network .section-title .kicker{color:var(--acid)}
+.future-network .network-lede{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+  gap:55px;
+  margin-bottom:42px;
+}
+.future-network .network-lede .large{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2rem,4.1vw,4.4rem);
+  line-height:.98;
+  letter-spacing:-.045em;
+}
+.future-network .network-lede .supporting{
+  margin:0;
+  align-self:end;
+  color:var(--chrome-muted);
+  font-size:15px;
+  line-height:1.55;
+}
+.future-network-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(243,238,228,.45);
+  border-left:1px solid rgba(243,238,228,.45);
+}
+.future-network-card{
+  min-height:240px;
+  padding:18px;
+  border-right:1px solid rgba(243,238,228,.45);
+  border-bottom:1px solid rgba(243,238,228,.45);
+}
+.future-network-card .number{color:var(--acid);font-size:11px;font-weight:700}
+.future-network-card h3{
+  margin:42px 0 12px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.55rem,2.4vw,2.55rem);
+  line-height:.98;
+  font-weight:400;
+}
+.future-network-card p{margin:0;color:var(--chrome-muted);font-size:13px;line-height:1.5}
+.network-addresses{
+  display:grid;
+  grid-template-columns:minmax(200px,.6fr) minmax(0,1.4fr);
+  gap:40px;
+  margin-top:42px;
+  padding-top:30px;
+  border-top:1px solid rgba(243,238,228,.45);
+}
+.network-addresses h3{margin:0;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--acid)}
+.network-addresses p{margin:0;color:var(--chrome-muted);font-size:14px;line-height:1.55}
+.network-address-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.network-address-list code{
+  display:inline-block;
+  padding:8px 10px;
+  border:1px solid rgba(243,238,228,.5);
+  color:var(--acid);
+  overflow-wrap:anywhere;
+}
+
+.future-permission-details{
+  margin-top:9px;
+  border:1px solid var(--soft-rule);
+  background:var(--paper);
+}
+.future-permission-details > summary{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:10px 12px;
+  list-style:none;
+  cursor:pointer;
+  font-weight:700;
+  font-size:12px;
+}
+.future-permission-details > summary::-webkit-details-marker{display:none}
+.future-permission-details > summary::after{content:"+";font-size:1.5rem;font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.future-permission-details[open] > summary::after{content:"−"}
+.future-permission-body{padding:0 12px 12px}
+.future-permission-body > p{margin:0 0 12px;color:var(--muted);font-size:12px;line-height:1.5}
+.future-permission-choice{
+  display:grid;
+  grid-template-columns:minmax(125px,.7fr) minmax(0,1.3fr);
+  gap:12px;
+  padding:10px 0;
+  border-top:1px solid var(--soft-rule);
+}
+.future-permission-choice strong{font-size:12px}
+.future-permission-choice div{display:flex;flex-wrap:wrap;gap:8px 14px}
+.future-permission-choice label{font-size:12px;text-transform:none;letter-spacing:0;font-weight:400;margin:0}
+
+[role="dialog"][aria-hidden="true"]{visibility:hidden}
+[role="dialog"].is-open,
+[role="dialog"].open{visibility:visible}
+
+/* Automatic dark mode unless a visitor explicitly selects Light or Dark. */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme]){
+    --paper:#17171b;
+    --paper2:#222126;
+    --ink:#f2ede5;
+    --muted:#beb7b2;
+    --rule:#ddd6ce;
+    --soft-rule:#5e5959;
+    --blue:#93aaff;
+    --surface:#201f24;
+    --surface-soft:#2a282e;
+    --focus:#b2c0ff;
+    --future-lilac:#302d3b;
+    --future-sky:#242f43;
+    --future-peach:#392c29;
+    --future-mint:#26342d;
+  }
+}
+
+html[data-theme="light"]{color-scheme:light}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#17171b;
+  --paper2:#222126;
+  --ink:#f2ede5;
+  --muted:#beb7b2;
+  --rule:#ddd6ce;
+  --soft-rule:#5e5959;
+  --blue:#93aaff;
+  --surface:#201f24;
+  --surface-soft:#2a282e;
+  --focus:#b2c0ff;
+  --future-lilac:#302d3b;
+  --future-sky:#242f43;
+  --future-peach:#392c29;
+  --future-mint:#26342d;
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme]) body,
+  :root:not([data-theme]) .utility,
+  :root:not([data-theme]) header,
+  :root:not([data-theme]) .location-card,
+  :root:not([data-theme]) .mode-card,
+  :root:not([data-theme]) .future-artifact,
+  :root:not([data-theme]) .future-form,
+  :root:not([data-theme]) .interface-panel,
+  :root:not([data-theme]) .artifact-modal{
+    background-color:var(--paper);
+  }
+  :root:not([data-theme]) header{background:rgba(23,23,27,.96)}
+  :root:not([data-theme]) .utility{background:#1d1c21}
+  :root:not([data-theme]) .open-call,
+  :root:not([data-theme]) .future-status,
+  :root:not([data-theme]) .collection-item,
+  :root:not([data-theme]) .stream-item{background:rgba(255,255,255,.035)}
+  :root:not([data-theme]) .archive-controls input,
+  :root:not([data-theme]) .archive-controls select,
+  :root:not([data-theme]) .future-form-row input,
+  :root:not([data-theme]) .future-form-row textarea,
+  :root:not([data-theme]) .future-drop,
+  :root:not([data-theme]) .permission-row{background:var(--surface)}
+  :root:not([data-theme]) .about-panel-head,
+  :root:not([data-theme]) .interface-head,
+  :root:not([data-theme]) .artifact-modal-head{background:#27242e}
+  :root:not([data-theme]) .future-normal,
+  :root:not([data-theme]) .mode-card:hover,
+  :root:not([data-theme]) .mode-card.active,
+  :root:not([data-theme]) .permission-row:has(input:checked){background:#302d3b}
+  :root:not([data-theme]) .artifact-visual{color:#17171b}
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .utility,
+html[data-theme="dark"] header,
+html[data-theme="dark"] .location-card,
+html[data-theme="dark"] .mode-card,
+html[data-theme="dark"] .future-artifact,
+html[data-theme="dark"] .future-form,
+html[data-theme="dark"] .interface-panel,
+html[data-theme="dark"] .artifact-modal{background-color:var(--paper)}
+html[data-theme="dark"] header{background:rgba(23,23,27,.96)}
+html[data-theme="dark"] .utility{background:#1d1c21}
+html[data-theme="dark"] .open-call,
+html[data-theme="dark"] .future-status,
+html[data-theme="dark"] .collection-item,
+html[data-theme="dark"] .stream-item{background:rgba(255,255,255,.035)}
+html[data-theme="dark"] .archive-controls input,
+html[data-theme="dark"] .archive-controls select,
+html[data-theme="dark"] .future-form-row input,
+html[data-theme="dark"] .future-form-row textarea,
+html[data-theme="dark"] .future-drop,
+html[data-theme="dark"] .permission-row{background:var(--surface)}
+html[data-theme="dark"] .about-panel-head,
+html[data-theme="dark"] .interface-head,
+html[data-theme="dark"] .artifact-modal-head{background:#27242e}
+html[data-theme="dark"] .future-normal,
+html[data-theme="dark"] .mode-card:hover,
+html[data-theme="dark"] .mode-card.active,
+html[data-theme="dark"] .permission-row:has(input:checked){background:#302d3b}
+html[data-theme="dark"] .artifact-visual{color:#17171b}
+
+/* Yellow remains intentionally dark-on-light in either theme. */
+.field,
+.handoff,
+.artifact-quote,
+.future-button.acid,
+.future-receipt{
+  color:#141414;
+}
+.future-receipt{color:#fff}
+
+.notice,
+.future-submit,
+.future-button.primary{background:var(--action-blue);color:#fff}
+.text-link:hover{background:var(--action-blue);color:#fff}
+.virtual-intro .future-button.primary{background:var(--acid);color:#141414;border-color:var(--acid)}
+.artifact-tag{color:var(--ink);background:var(--paper)}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme]) .section-title .kicker,
+  :root:not([data-theme]) .open-call .kicker,
+  :root:not([data-theme]) .future-artifact .code{color:#83cdb6}
+}
+html[data-theme="dark"] .section-title .kicker,
+html[data-theme="dark"] .open-call .kicker,
+html[data-theme="dark"] .future-artifact .code{color:#83cdb6}
+
+@media(prefers-contrast:more){
+  :root{--muted:var(--ink);--soft-rule:var(--rule)}
+  a{text-decoration-thickness:2px}
+}
+
+/* ---------- fixed-contrast museum zones ----------
+   Some areas are intentionally dark environments in BOTH site themes.
+   They must not use reversible page tokens such as --ink/--paper for
+   their base foreground/background relationship. */
+:root{
+  --fixed-dark:#17171c;
+  --fixed-dark-deep:#121217;
+  --fixed-light:#f3eee4;
+  --fixed-light-muted:#d8d1c7;
+  --fixed-dark-rule:rgba(243,238,228,.45);
+}
+
+.future-network{
+  background:var(--fixed-dark);
+  color:var(--fixed-light);
+}
+.future-network .network-lede .supporting,
+.future-network-card p,
+.network-addresses p{
+  color:var(--fixed-light-muted);
+}
+.future-network-grid{
+  border-top-color:var(--fixed-dark-rule);
+  border-left-color:var(--fixed-dark-rule);
+}
+.future-network-card{
+  border-right-color:var(--fixed-dark-rule);
+  border-bottom-color:var(--fixed-dark-rule);
+}
+.network-addresses{border-top-color:var(--fixed-dark-rule)}
+.network-address-list code{border-color:rgba(243,238,228,.5)}
+
+.virtual-intro{color:var(--fixed-light)}
+.virtual-privacy{
+  background:var(--fixed-dark-deep);
+  color:#bdb7ae;
+  border-bottom-color:#4b474d;
+}
+
+/* Fixed-color accent surfaces need a fixed readable foreground. */
+::selection{color:#141414}
+.footer-col .kicker{color:#dceaff}
+.future-submit:hover,
+.mail:hover{
+  background:#111116;
+  color:#fff;
+}
+
+/* ---------- stable interface chrome ----------
+   These elements are intentionally interface chrome rather than page surfaces.
+   Do not derive their backgrounds from --ink, which reverses meaning in dark mode. */
+:root{
+  --chrome-bg:#17171c;
+  --chrome-bg-soft:#23212a;
+  --chrome-fg:#f3eee4;
+  --chrome-muted:#d8d1c7;
+  --chrome-rule:#555159;
+  --control-rule:#8f8884;
+}
+
+.future-prototype{
+  background:var(--chrome-bg);
+  color:var(--chrome-fg);
+  border-bottom-color:var(--chrome-rule);
+}
+.future-prototype a{
+  color:var(--acid);
+  border-bottom-color:currentColor;
+}
+.future-prototype a:hover{color:#fff}
+
+.theme-control{border-color:var(--control-rule)}
+.theme-control button{border-right-color:var(--control-rule)}
+.theme-control button[aria-pressed="true"]{
+  background:var(--surface-soft);
+  color:inherit;
+  box-shadow:inset 0 -2px 0 var(--blue);
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme]){--control-rule:#706a6f}
+}
+html[data-theme="dark"]{--control-rule:#706a6f}
+
+@media(forced-colors:active){
+  .live:before,.location-open:before,.target-dot{forced-color-adjust:auto}
+  .future-quick-card svg{stroke:CanvasText}
+}
+
+@media(max-width:1100px){
+  .future-network-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:900px){
+  .future-quick-grid{grid-template-columns:1fr}
+  .future-quick-card{min-height:145px}
+  .future-network .network-lede,
+  .network-addresses{grid-template-columns:1fr;gap:22px}
+}
+
+@media(max-width:850px){
+  .utility-right{display:flex}
+}
+
+@media(max-width:680px){
+  .utility-left > span:not(.live){display:none}
+  .utility .wrap{gap:10px}
+  .utility-right{gap:8px}
+  .utility-right > .future-action{display:none}
+  .theme-control button{padding-inline:6px}
+  .future-prototype .prototype-context{display:none}
+}
+
+@media(max-width:560px){
+  .future-quick-head{display:block}
+  .future-quick-head p{margin-top:8px}
+  .future-quick-card{grid-template-columns:58px 1fr;padding:14px}
+  .future-quick-card svg{width:50px;height:68px}
+  .future-network-grid{grid-template-columns:1fr}
+  .future-permission-choice{grid-template-columns:1fr;gap:7px}
+}
+
+
+
+/* ---------- dark-mode luminous-surface restraint ----------
+   Acid green is an accent in dark mode, not a full-screen light source. */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme]) .about-question,
+  :root:not([data-theme]) .field,
+  :root:not([data-theme]) .handoff,
+  :root:not([data-theme]) .artifact-quote{
+    background:#25281d;
+    color:#f2ede5;
+    border-color:#667336;
+  }
+
+  :root:not([data-theme]) .about-question{
+    box-shadow:inset 5px 0 0 var(--acid);
+  }
+
+  :root:not([data-theme]) .about-question .kicker,
+  :root:not([data-theme]) .field .kicker,
+  :root:not([data-theme]) .field blockquote strong{
+    color:var(--acid);
+  }
+
+  :root:not([data-theme]) .field{
+    box-shadow:inset 0 5px 0 var(--acid);
+  }
+
+  :root:not([data-theme]) .handoff,
+  :root:not([data-theme]) .artifact-quote{
+    border-left:4px solid var(--acid);
+  }
+}
+
+html[data-theme="dark"] .about-question,
+html[data-theme="dark"] .field,
+html[data-theme="dark"] .handoff,
+html[data-theme="dark"] .artifact-quote{
+  background:#25281d;
+  color:#f2ede5;
+  border-color:#667336;
+}
+
+html[data-theme="dark"] .about-question{
+  box-shadow:inset 5px 0 0 var(--acid);
+}
+
+html[data-theme="dark"] .about-question .kicker,
+html[data-theme="dark"] .field .kicker,
+html[data-theme="dark"] .field blockquote strong{
+  color:var(--acid);
+}
+
+html[data-theme="dark"] .field{
+  box-shadow:inset 0 5px 0 var(--acid);
+}
+
+html[data-theme="dark"] .handoff,
+html[data-theme="dark"] .artifact-quote{
+  border-left:4px solid var(--acid);
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="future-prototype"><div class="wrap"><span>SPECULATIVE FUTURE INTERFACE / FICTIONAL EXAMPLE RECORDS</span><span class="prototype-context">ONE POSSIBLE FUTURE OF THE REAL MUSEUM</span><span><a href="https://museumofordinarylife.org">Present-day Museum ↗</a> &nbsp;·&nbsp; <a href="#context" data-meta-open>Why does this exist? ↘</a></span></div></div>
+
+<div class="utility">
+  <div class="wrap">
+    <div class="utility-left"><span class="live">Archive network synchronized</span><span>14 shared physical hubs</span><span>Public archive: 84,203 records</span></div>
+    <div class="utility-right">
+      <button class="future-action" data-interface-open>Send visit to interface ↗</button>
+      <div class="theme-control" role="group" aria-label="Color theme">
+        <button type="button" data-theme-choice="auto" aria-pressed="true">Auto</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+      </div>
+      <details class="language-menu">
+        <summary aria-label="Language and translations">EN</summary>
+        <div class="language-menu-panel">
+          <strong>English / prototype interface</strong>
+          <p>This prototype is English-only. In the imagined Museum network, translated views can follow a visitor’s interface while source-language descriptions, contributor wording and local names remain attached to the record.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="#top">
+      <span class="the">The</span>
+      <span class="name">Museum <span class="wordmark-of">of</span> Ordinary Life</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#locations">Visit</a>
+      <a href="#network">Network</a>
+      <a href="#virtual">Virtual museum</a>
+      <a href="#archive">Archive</a>
+      <a href="#contribute">Contribute</a>
+      <a href="#about" data-about-open>About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section class="wrap hero future-hero">
+  <div class="hero-main">
+    <h1>What used to be <em>ordinary</em> is now one of the hardest things to explain.</h1>
+    <div class="hero-caption"><p>The Museum preserves everyday life across periods of enormous change: the things people touched, waited for, paid for, repaired, carried, complained about, depended on and eventually stopped needing.</p><p>The collection began in 2026 with a simple instruction: document what you would normally never think to document.</p></div>
+  </div>
+  <aside class="hero-side">
+    <p class="mission">The Museum now exists wherever the collection can be encountered: buildings, neighborhoods, shared archives and virtual space.</p>
+    <div class="open-call">
+      <span class="kicker">Visit today / San Francisco</span><h2>Sunset House</h2>
+      <p>Home, Food, Screens, Waiting and the permanent exhibition <em>This Was Somebody’s Tuesday</em>.</p>
+      <div class="future-actions"><a class="future-button primary" href="#locations">Visit physically</a><a class="future-button acid" href="#virtual">Enter virtual museum</a></div>
+    </div>
+  </aside>
+</section>
+
+<div class="notice"><div class="wrap"><strong>Across the network</strong><span>Oakland Repair Hall: mobility gallery reopened after this morning’s rail-parts rotation.</span><a href="#locations">All locations →</a></div></div>
+
+<section class="future-quick-start" aria-labelledby="future-quick-heading">
+  <div class="wrap">
+    <div class="future-quick-head">
+      <div class="kicker" id="future-quick-heading">New here? Start anywhere.</div>
+      <p>The future Museum is large, but a visit does not have to be. Find a place near a community, browse one ordinary object, or add something from the life happening around you.</p>
+    </div>
+    <div class="future-quick-grid">
+      <a class="future-quick-card" href="#network">
+        <svg viewBox="0 0 80 100" aria-hidden="true" focusable="false"><path d="M12 82h56M18 82V46h44v36M14 46l26-22 26 22M26 82V59h11v23M45 58h10v10H45z"/><path d="M40 13v11M35 13h10"/></svg>
+        <div><span class="quick-label">Find the Museum</span><h2>It may be a building—or not.</h2><p>Shared hubs, neighborhood collections, temporary exhibitions, diasporic museums and local archives all belong to the network.</p></div>
+      </a>
+      <a class="future-quick-card" href="#archive">
+        <svg viewBox="0 0 80 100" aria-hidden="true" focusable="false"><path d="M18 8h38l6 8v73H18z"/><path d="M56 8v10h6M25 30h29M25 40h23M25 50h27M25 68h14M45 68h9M25 78h29"/></svg>
+        <div><span class="quick-label">Browse</span><h2>Start with one ordinary thing.</h2><p>Search the public archive or follow the context attached to an object, interface, routine, room or remembered system.</p></div>
+      </a>
+      <a class="future-quick-card" href="#contribute">
+        <svg viewBox="0 0 80 100" aria-hidden="true" focusable="false"><rect x="13" y="21" width="54" height="58" rx="3"/><path d="M24 21l5-10h22l5 10M22 66l12-14 9 10 7-8 9 12M27 38h.1"/></svg>
+        <div><span class="quick-label">Contribute</span><h2>The archive is still unfinished.</h2><p>People continue to document ordinary life because nobody knows in advance which details the future will need.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why-ordinary-life">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="kicker">Museum information</div>
+      <h2>The museum changed because ordinary life changed.</h2>
+    </div>
+
+    <div class="future-status-grid">
+      <div class="future-status"><div class="kicker">Admission</div><p><strong>There isn’t any.</strong> Walk in. If a room is full, the site will say so.</p></div>
+      <div class="future-status"><div class="kicker">Food</div><p>Every location has a common kitchen. Eat there whether or not you came for the museum.</p></div>
+      <div class="future-status"><div class="kicker">Stewardship</div><p>Locations are cared for by rotating local stewardship groups, not permanent executive staff.</p></div>
+      <div class="future-status"><div class="kicker">Collections</div><p>Records connect through a shared archive. Physical objects can remain with the communities that hold their context; exhibitions travel when people choose to share them.</p></div>
+      <div class="future-status"><div class="kicker">Store</div><p>There is no museum shop. Catalogs, scans and reproducible objects are available to make or take as needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="locations">
+  <div class="wrap">
+    <div class="section-title"><div class="kicker">Physical locations</div><h2>Buildings with previous lives.</h2></div>
+    <div class="locations-grid">
+      <article class="location-card"><div><div class="topline"><span class="kicker">San Francisco / Sunset</span><span class="location-open">Open</span></div><h3>Sunset House</h3><div class="former">Former neighborhood supermarket</div></div><div class="location-meta"><div><strong>Collections</strong><br>Home, Food, Screens, Waiting, 2026 Opening Collection</div><div><strong>Also here</strong><br>Common kitchen, garden court, quiet rooms, recording booth</div></div></article>
+      <article class="location-card"><div><div class="topline"><span class="kicker">Oakland / West</span><span class="location-open">Open</span></div><h3>Repair Hall</h3><div class="former">Former distribution warehouse</div></div><div class="location-meta"><div><strong>Collections</strong><br>Work, Tools, Maintenance, Mobility, Infrastructure</div><div><strong>Also here</strong><br>Working repair commons, tool library, bicycle floor</div></div></article>
+      <article class="location-card"><div><div class="topline"><span class="kicker">Chicago / Near West</span><span class="location-open">Open</span></div><h3>Permission Office</h3><div class="former">Former benefits and licensing center</div></div><div class="location-meta"><div><strong>Collections</strong><br>Forms, IDs, applications, approvals, denials, queues, appeals</div><div><strong>Permanent room</strong><br>Preserved waiting room with ticket dispenser and fluorescent lighting</div></div></article>
+      <article class="location-card"><div><div class="topline"><span class="kicker">London / South Bank</span><span class="location-open">Open</span></div><h3>Time House</h3><div class="former">Former corporate office tower</div></div><div class="location-meta"><div><strong>Collections</strong><br>Calendars, shifts, payroll, meetings, school bells, deadlines</div><div><strong>Current exhibition</strong><br><em>Seven Days: How a Week Became Infrastructure</em></div></div></article>
+    </div>
+  </div>
+</section>
+<div class="future-visit-note"><div class="wrap"><blockquote>If you need somewhere to sit, charge, eat, wash up or be quiet, those are not “museum services.” They’re just here.</blockquote></div></div>
+
+<section class="section future-network" id="network">
+  <div class="wrap">
+    <div class="section-title"><div class="kicker">Distributed museum network</div><h2>One archive. Many museums. No single center gets to define ordinary life.</h2></div>
+    <div class="network-lede">
+      <p class="large">The fourteen large physical sites are shared hubs, not headquarters. Most of the Museum exists at smaller scales: wherever people decide a place, community, language, experience or moment deserves to remember itself.</p>
+      <p class="supporting">The network provides preservation, replication, catalog interoperability, consent infrastructure, accessibility and discovery. Local museums decide what they collect, which languages they use, what stays physically local, how material is interpreted, and whether a record is public, delayed, restricted or offline.</p>
+    </div>
+    <div class="future-network-grid">
+      <article class="future-network-card"><span class="number">01</span><h3>Rooted somewhere</h3><p>Neighborhood, village, city and regional museums cared for by people who know a place from within.</p></article>
+      <article class="future-network-card"><span class="number">02</span><h3>Temporary by design</h3><p>A museum can exist for a day, a season, one public gathering, one question or one exhibition—and end when its work is done.</p></article>
+      <article class="future-network-card"><span class="number">03</span><h3>Distributed</h3><p>Diasporic, language-based and thematic museums can connect people across distance without pretending that community requires one territory.</p></article>
+      <article class="future-network-card"><span class="number">04</span><h3>Overlapping</h3><p>Several museums can describe the same place or experience differently. Connection does not require collapsing disagreement into one authorized account.</p></article>
+    </div>
+    <div class="network-addresses">
+      <h3>Homes in the network</h3>
+      <div>
+        <p>Some participating museums use a Museum address; others keep their own domains, local systems or offline collections. An address is a connective home, not a jurisdiction or claim of authority.</p>
+        <div class="network-address-list" aria-label="Examples of museums connected to the future network"><code>sf.museumofordinarylife.org</code><code>kumasi.museumofordinarylife.org</code><code>mekongdelta.museumofordinarylife.org</code><code>queerdomestic.museumofordinarylife.org</code></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section virtual-intro" id="virtual">
+  <div class="wrap virtual-layout">
+    <div><span class="kicker">Virtual museum</span><h2>Visit without pretending you are somewhere else.</h2></div>
+    <div class="virtual-copy"><p>The virtual Museum is a spatial way of moving through relationships between objects, testimony, rooms, sounds and reconstructed systems.</p><p>You can experience it here, send it to a room, or hand the visit to your personal interface.</p><div class="future-actions"><button type="button" class="future-button primary" id="begin-virtual">Begin here</button><button type="button" class="future-button acid" data-interface-open>Send to personal interface ↗</button></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap"><div class="section-title"><div class="kicker">Experience mode</div><h2>Choose how much of the museum you want around you.</h2></div>
+    <div class="mode-grid">
+      <button type="button" class="mode-card active" aria-pressed="true" data-mode="Spatial visit active. Rooms reorganize around relationships between objects, testimony and systems."><div class="kicker">01 / Spatial</div><div><h3>Walk the archive</h3><p>Rooms, objects and testimony arranged as a navigable environment.</p></div></button>
+      <button type="button" class="mode-card" aria-pressed="false" data-mode="Memory thread active. Following one contributor through objects added across decades."><div class="kicker">02 / Memory thread</div><div><h3>Follow one life</h3><p>Move through objects connected to a single contributor across decades.</p></div></button>
+      <button type="button" class="mode-card" aria-pressed="false" data-mode="Ambient visit active. Material arrives slowly and stays peripheral until something catches your attention."><div class="kicker">03 / Ambient</div><div><h3>Let it drift</h3><p>Sounds, images and labels arrive without demanding attention.</p></div></button>
+      <button type="button" class="mode-card" aria-pressed="false" data-mode="Low-stimulus visit active. Motion, spatial audio and peripheral material are suppressed."><div class="kicker">04 / Low stimulus</div><div><h3>Only objects</h3><p>No motion, spatial audio or peripheral material unless requested.</p></div></button>
+    </div>
+  </div>
+</section>
+<section class="virtual-stage" id="virtual-stage"><div class="stage-room"><div class="stage-wall"></div><div class="stage-grid"></div>
+  <button class="stage-node stage-a" data-stage-note="A reconstructed 2026 apartment entryway assembled from 312 contributed photographs."><span class="kicker">Room fragment / 2026</span><strong>The place where the keys went</strong></button>
+  <button class="stage-node stage-b" data-stage-note="Thirty-seven checkout interfaces arranged by the number of decisions required to buy a loaf of bread."><span class="kicker">System reconstruction / 2027–31</span><strong>Pay here</strong></button>
+  <button class="stage-node stage-c" data-stage-note="A listening table of hold music, phone trees, wait estimates and recordings made by people while waiting."><span class="kicker">Listening table</span><strong>Please remain on the line</strong></button>
+</div><div class="stage-caption" id="stage-caption" aria-live="polite">Virtual visit ready. Select a room fragment, or send the whole experience to another interface.</div><div class="stage-actions"><button type="button" data-interface-open>Send experience ↗</button><button type="button" id="recompose-room">Recompose room</button></div></section>
+<div class="virtual-privacy"><div class="wrap"><span>Your visit state can move between interfaces without restarting.</span><span>No behavioral profile is retained after you leave unless you save the path yourself.</span></div></div>
+
+<section class="section" id="collection">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="kicker">Collection map</div>
+      <h2>What the archive learned to keep.</h2>
+    </div>
+
+    <div class="collection-intro">
+      <p>
+        Almost anything, provided it helps explain how everyday life actually worked.
+        The Museum values ubiquity, context and lived experience (at least as much as rarity).
+      </p>
+    </div>
+
+    <div class="collection-grid">
+      <a class="collection-item" href="#contribute">
+        <span class="code">MOL / HOME</span>
+        <div>
+          <h3>Home</h3>
+          <p>Bedrooms, kitchens, junk drawers, medicine cabinets, cables, laundry, clutter.</p>
+        </div>
+      </a>
+
+      <a class="collection-item" href="#contribute">
+        <span class="code">MOL / WORK</span>
+        <div>
+          <h3>Work</h3>
+          <p>Badges, schedules, uniforms, tools, commutes, break rooms, workplace software.</p>
+        </div>
+      </a>
+
+      <a class="collection-item" href="#contribute">
+        <span class="code">MOL / MONEY</span>
+        <div>
+          <h3>Money</h3>
+          <p>Receipts, price labels, payment screens, bills, cards, subscriptions, tipping.</p>
+        </div>
+      </a>
+
+      <a class="collection-item" href="#contribute">
+        <span class="code">MOL / TECH</span>
+        <div>
+          <h3>Technology</h3>
+          <p>Devices, chargers, notifications, home screens, login prompts, errors, old cables.</p>
+        </div>
+      </a>
+
+      <a class="collection-item" href="#contribute">
+        <span class="code">MOL / STREET</span>
+        <div>
+          <h3>Public life</h3>
+          <p>Transit, signs, shops, waiting rooms, benches, advertisements, infrastructure.</p>
+        </div>
+      </a>
+
+      <a class="collection-item" href="#contribute">
+        <span class="code">MOL / PAPER</span>
+        <div>
+          <h3>Paperwork</h3>
+          <p>Forms, leases, bills, instructions, applications, notices, envelopes marked IMPORTANT.</p>
+        </div>
+      </a>
+
+      <a class="collection-item" href="#contribute">
+        <span class="code">MOL / ROUTINE</span>
+        <div>
+          <h3>Routine</h3>
+          <p>Morning, bedtime, groceries, medication, commuting, cleaning, scrolling, waiting.</p>
+        </div>
+      </a>
+
+      <a class="collection-item" href="#contribute">
+        <span class="code">MOL / TRACE</span>
+        <div>
+          <h3>Digital traces</h3>
+          <p>Screenshots, emails, texts, interfaces, app prompts and things erased by the next update.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="archive">
+  <div class="wrap"><div class="section-title"><div class="kicker">Public archive</div><h2>84,203 records of things that once barely seemed worth saving.</h2></div>
+    <div class="archive-controls"><input id="future-archive-search" type="search" aria-label="Search public archive example records" placeholder="Search example records…"><select id="future-archive-filter" aria-label="Filter public archive by category"><option value="">All categories</option><option>Work</option><option>Money</option><option>Public life</option><option>Paperwork</option><option>Home</option><option>Technology</option></select><div class="archive-count" id="future-archive-count" aria-live="polite">6 records</div></div>
+    <div class="future-artifact-grid" id="future-artifact-grid">
+      <button class="future-artifact" data-title="Grocery receipt" data-cat="Money" data-code="MOL-2026-000041" data-year="2026" data-place="San Francisco, California" data-desc="Thermal-paper grocery receipt preserved with a photograph of the kitchen counter where it was emptied from a pocket." data-quote="I only photographed it because the Museum asked for boring things." data-shape="receipt"><div class="artifact-visual"><span class="artifact-tag">Opening collection</span><div class="receipt-object"><i></i><i></i><i></i><i></i><i></i></div></div><span class="code">MOL-2026-000041</span><h3>Grocery receipt</h3><p>One ordinary purchase, including prices, tax, packaging deposits and the payment method used.</p><div class="artifact-foot"><span>2026</span><span>Money</span></div></button>
+      <button class="future-artifact" data-title="Employee access badge" data-cat="Work" data-code="MOL-2027-000884" data-year="2027" data-place="Oakland, California" data-desc="Plastic credential controlling access to doors, timekeeping systems and several internal workplace services." data-quote="It stopped opening the door before I stopped thinking of it as mine." data-shape="badge"><div class="artifact-visual"><span class="artifact-tag">Work collection</span><div class="badge-object"></div></div><span class="code">MOL-2027-000884</span><h3>Employee access badge</h3><p>A small object that simultaneously identified a worker, granted permission and recorded movement.</p><div class="artifact-foot"><span>2027</span><span>Work</span></div></button>
+      <button class="future-artifact" data-title="Transit fare gate" data-cat="Public life" data-code="MOL-2028-002191" data-year="2028" data-place="Bay Area" data-desc="Retired fare-control assembly from a period when movement through public transit required individual payment validation." data-quote="The strange part to students now is not the gate. It’s that everyone had to prove payment one at a time." data-shape="gate"><div class="artifact-visual"><span class="artifact-tag">Infrastructure</span><div class="gate-object"></div></div><span class="code">MOL-2028-002191</span><h3>Transit fare gate</h3><p>A machine placed between a person and a train to verify that an individual transaction had occurred.</p><div class="artifact-foot"><span>2028</span><span>Public life</span></div></button>
+      <button class="future-artifact" data-title="Eligibility renewal form" data-cat="Paperwork" data-code="MOL-2031-006220" data-year="2031" data-place="Chicago, Illinois" data-desc="Six-page renewal packet requiring a household to repeatedly demonstrate continued eligibility for basic support." data-quote="Every few months I had to prove that nothing had improved enough to stop needing help." data-shape="paper"><div class="artifact-visual"><span class="artifact-tag">Permission Office</span><div class="paper-object"><i></i><i></i><i></i><i></i><i></i></div></div><span class="code">MOL-2031-006220</span><h3>Eligibility renewal form</h3><p>Documentation of a system in which access to basic resources depended on repeated qualification.</p><div class="artifact-foot"><span>2031</span><span>Paperwork</span></div></button>
+      <button class="future-artifact" data-title="Apartment key" data-cat="Home" data-code="MOL-2026-000112" data-year="2026" data-place="Portland, Oregon" data-desc="Cut metal key contributed with photographs of an apartment entryway, a key bowl and a note explaining who had copies." data-quote="This was the one I checked for three times before leaving the house." data-shape="key"><div class="artifact-visual"><span class="artifact-tag">Opening collection</span><div class="key-object"></div></div><span class="code">MOL-2026-000112</span><h3>Apartment key</h3><p>One copy among four. The contributor documented where it lived and who was trusted with the others.</p><div class="artifact-foot"><span>2026</span><span>Home</span></div></button>
+      <button class="future-artifact" data-title="Notification screen" data-cat="Technology" data-code="MOL-2034-010501" data-year="2034" data-place="Remote contribution" data-desc="Screenshot and device capture showing a conventional notification stack shortly before persistent attention-routing interfaces were broadly retired." data-quote="I didn't realize how often my day was interrupted until the interruptions became museum material." data-shape="screen"><div class="artifact-visual"><span class="artifact-tag">Screens collection</span><div class="screen-object"></div></div><span class="code">MOL-2034-010501</span><h3>Notification screen</h3><p>Twelve reminders, four messages, two promotional alerts and a software update competing on one display.</p><div class="artifact-foot"><span>2034</span><span>Technology</span></div></button>
+    </div>
+  </div>
+</section>
+
+<section class="field">
+  <div class="wrap">
+    <div class="kicker">Field instruction 001</div>
+    <blockquote>
+      Don’t look for interesting things.<br>
+      <strong>Look for ordinary things.</strong>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section" id="contributions">
+  <div class="wrap"><div class="section-title"><div class="kicker">Recent contributions</div><h2>The archive is still being made by people noticing things.</h2></div>
+    <div class="contribution-stream">
+      <article class="stream-item"><div><span class="kicker">Home / Today</span><h3>Handwritten pantry label</h3><p>“Please use the peaches first.” Found on a shared shelf after a neighborhood food delivery.</p></div><div class="stream-meta">Richmond District / anonymous / public</div></article>
+      <article class="stream-item"><div><span class="kicker">Maintenance / Today</span><h3>Repair note on a communal e-bike</h3><p>A small paper tag explaining that the rear brake had been adjusted and asking the next rider to report any noise.</p></div><div class="stream-meta">Oakland / credited / public</div></article>
+      <article class="stream-item"><div><span class="kicker">Social life / Yesterday</span><h3>Kitchen table after everyone left</h3><p>Seven cups, two unfinished puzzles, a charger, seed packets and a note saying “leave this here.”</p></div><div class="stream-meta">Glasgow / anonymous / public</div></article>
+      <article class="stream-item"><div><span class="kicker">Infrastructure / Yesterday</span><h3>Stewardship rotation board</h3><p>A local board showing who volunteered for water-system inspection, garden maintenance and archive intake this cycle.</p></div><div class="stream-meta">São Paulo / collective credit</div></article>
+      <article class="stream-item"><div><span class="kicker">Communication / 3 days ago</span><h3>“No need to reply” message</h3><p>A routine asynchronous note sent between neighbors coordinating a borrowed tool.</p></div><div class="stream-meta">Toronto / restricted name</div></article>
+      <article class="stream-item"><div><span class="kicker">Ordinary object / 4 days ago</span><h3>Mug with repaired handle</h3><p>Repaired twice. Contributor: “It is not special. That is why I kept submitting photos of it.”</p></div><div class="stream-meta">Lisbon / public</div></article>
+    </div><div class="future-actions"><a class="future-button primary" href="#contribute">Add something ordinary →</a></div>
+  </div>
+</section>
+
+<section class="section" id="field-notes">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="kicker">Field Notes</div>
+      <h2>Ways of noticing</h2>
+    </div>
+
+    <div class="notes-grid">
+      <article class="note">
+        <span class="type">Field note / Photography</span>
+        <h3>Photograph the object twice.</h3>
+        <p>
+          First as an object. Then where it actually, ordinarily lives. A key on a blank surface tells us
+          what a key looked like. A key beside the door, receipts and yesterday’s mail tells us about a life.
+        </p>
+      </article>
+
+      <article class="note">
+        <span class="type">Field note / Digital life</span>
+        <h3>Interfaces disappear quickly.</h3>
+        <p>
+          Screenshots of mundane software, payment prompts, settings pages and error messages
+          may become harder to reconstruct than physical objects. Capture them before the redesign (or retirement).
+        </p>
+      </article>
+
+      <article class="note">
+        <span class="type">Field note / Meaning</span>
+        <h3>Nothing profound is required.</h3>
+        <p>
+          An object doesn't need a moving story to belong here. “This is the mug I use every morning”
+          is historical information. So is “I don’t remember why I kept this.”
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contribute">
+  <div class="wrap contribute">
+    <div class="contribute-intro"><span class="kicker">Contribute / Shared archive</span><h2>Add an ordinary thing.</h2><p>You don't need to know whether it matters. A photograph is enough. Context helps. The Museum can do the archival work later.</p><div class="future-normal"><div class="kicker">Collection practice</div><p>No contributor is asked to prove ownership, status, residency, expertise or historical importance. If consent or privacy is unclear, a steward asks before publication.</p></div></div>
+    <div><form class="future-form" id="future-form">
+      <div class="future-form-row"><label>File</label><label class="future-drop"><input id="future-file" type="file" multiple><span><strong id="future-file-label">Drop something ordinary here</strong><br><small>Photo, video, audio, screenshot, document or scan</small></span></label></div>
+      <div class="future-form-row"><label for="future-what">What is it?</label><input id="future-what" type="text" required placeholder="e.g. A key bowl by our front door"></div>
+      <div class="future-form-row"><label for="future-when">When?</label><input id="future-when" type="date"></div>
+      <div class="future-form-row"><label for="future-where">Where?</label><input id="future-where" type="text" placeholder="As broad as you prefer"></div>
+      <div class="future-form-row"><label for="future-context">Anything we should know?</label><textarea id="future-context" placeholder="One sentence is enough. ‘I use this every day’ is useful."></textarea></div>
+      <div class="future-form-row"><label for="future-credit">Credit</label><input id="future-credit" type="text" placeholder="Name, initials, collective, or leave blank"></div>
+      <div class="future-form-row"><label>Publication</label>
+        <label class="permission-row"><input type="radio" name="future-permission" checked> <span>Public archive now, with credit above</span></label>
+        <label class="permission-row"><input type="radio" name="future-permission"> <span>Public archive now, anonymously</span></label>
+        <label class="permission-row"><input type="radio" name="future-permission"> <span>Preserve now; publish on or after a date I choose</span></label>
+        <label class="permission-row"><input type="radio" name="future-permission"> <span>Archive only; ask before display</span></label>
+        <label class="permission-row"><input type="radio" name="future-permission"> <span>Archive only; don't publish</span></label>
+      </div>
+      <div class="future-form-row"><label for="future-release">Optional release date</label><input id="future-release" type="date"><small>Used only if you chose delayed publication.</small></div>
+      <div class="future-form-row">
+        <label>Use beyond display</label>
+        <details class="future-permission-details">
+          <summary>Research, machine learning, generative reuse &amp; future uses</summary>
+          <div class="future-permission-body">
+            <p>These permissions stay separate from publication. Making something public does not silently grant any of them.</p>
+            <div class="future-permission-choice"><strong>Research</strong><div><label><input type="radio" name="research" checked> Ask me</label><label><input type="radio" name="research"> Allow</label><label><input type="radio" name="research"> Decline</label></div></div>
+            <div class="future-permission-choice"><strong>Machine learning</strong><div><label><input type="radio" name="ml" checked> Ask me</label><label><input type="radio" name="ml"> Allow</label><label><input type="radio" name="ml"> Decline</label></div></div>
+            <div class="future-permission-choice"><strong>Generative reuse</strong><div><label><input type="radio" name="gen" checked> Ask me</label><label><input type="radio" name="gen"> Allow</label><label><input type="radio" name="gen"> Decline</label></div></div>
+            <div class="future-permission-choice"><strong>Unknown future uses</strong><div><label><input type="radio" name="future-use" checked> Ask me</label><label><input type="radio" name="future-use"> Allow</label><label><input type="radio" name="future-use"> Decline</label></div></div>
+          </div>
+        </details>
+      </div>
+      <div class="future-form-row"><label for="future-contact">Contact, if we need to ask something</label><input id="future-contact" type="email" placeholder="Optional"></div>
+      <button class="future-submit" type="submit">Submit to the Museum →</button><p class="privacy-note">Prototype only — this form doesn't upload or transmit anything.</p>
+    </form><div class="future-receipt" id="future-receipt" role="status" aria-live="polite"><div class="kicker">Contribution received / demonstration</div><h3>Thank you for noticing it.</h3><p>Your contribution has been assigned a temporary incoming record.</p><div class="future-receipt-code" id="future-receipt-code"></div></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="institution-grid">
+      <div class="institution-cell">
+        <div class="kicker">Established</div>
+        <p>2026 / opening collection still held in full</p>
+      </div>
+      <div class="institution-cell">
+        <div class="kicker">Physical network</div>
+        <p>14 shared physical hubs + independent local, temporary and distributed museums</p>
+      </div>
+      <div class="institution-cell">
+        <div class="kicker">Archive status</div>
+        <p>Actively forming / continuously replicated</p>
+      </div>
+      <div class="institution-cell">
+        <div class="kicker">Where is the museum?</div>
+        <p>In shared hubs, local and community museums, temporary exhibitions, private or public archives, and whatever interface you are using.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<div class="about-backdrop" data-about-close aria-hidden="true"></div>
+
+<aside class="about-panel" id="about-panel" role="dialog" aria-modal="true" inert aria-hidden="true" aria-labelledby="about-panel-heading">
+  <div class="about-panel-head">
+    <div class="about-panel-head-inner">
+      <div class="about-panel-title">Museum information / About</div>
+      <button class="about-close" type="button" data-about-close aria-label="Close About panel">Close ×</button>
+    </div>
+  </div>
+
+  <div class="about-panel-body">
+    <h2 class="about-panel-display" id="about-panel-heading">
+      A museum for the things we haven’t <span>lost yet.</span>
+    </h2>
+
+    <p class="about-lede">
+      The Museum of Ordinary Life is a living archive of everyday human life,
+      established in 2026 while the material it collects is still ordinary.
+    </p>
+
+    <section class="about-block">
+      <h3>What we do</h3>
+      <div class="about-block-copy">
+        <p>
+          We document ordinary objects, spaces, interfaces, routines, sounds,
+          paperwork and personal accounts that usually pass through the world
+          without entering a historical record.
+        </p>
+        <p>
+          The Museum is interested not only in what something looked like,
+          but in how it fit into a life: where it lived, how it was used,
+          what systems surrounded it and what the person living with it thought about it.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <h3>Why 2026?</h3>
+      <div class="about-block-copy">
+        <p>
+          Because this is when we started.
+        </p>
+        <p>
+          Historical archives are often assembled after the fact, when the mundane details
+          of an era have already disappeared. We are trying the opposite: documenting the
+          present before we know what will eventually seem important, strange, obsolete,
+          beautiful or difficult to explain.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <h3>What counts?</h3>
+      <div class="about-block-copy">
+        <p>
+          A grocery receipt can count. So can a bus stop, a work badge, a phone notification,
+          a medicine cabinet, a rent notice, a junk drawer, a five-minute recording of a street,
+          or the place somebody charges their phone every night.
+        </p>
+        <p>
+          Rarity is not a requirement. Neither is beauty. Neither is a profound story.
+          Ubiquity may be more historically useful than uniqueness.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <h3>What kind of museum is this?</h3>
+      <div class="about-block-copy">
+        <p>
+          The Museum is a distributed network rather than a single institution: shared physical hubs,
+          local and community museums, temporary exhibitions, distributed collections, shared archives and virtual spaces.
+          Its collection can originate anywhere ordinary life is being lived and documented.
+        </p>
+        <p>
+          No location has to become the authoritative account of a place or community. Several museums can overlap,
+          disagree, remain partly offline, or connect only selected records to the wider network.
+        </p>
+        <p>
+          It remains part public-history project, part participatory archive, part artwork,
+          and part experiment in noticing one period from another.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <h3>Who makes the collection?</h3>
+      <div class="about-block-copy">
+        <p>
+          Everyone can. Contributors don't need archival training or a theory of why
+          something matters. The person living with an object often knows something about it
+          that a curator never could.
+        </p>
+        <p>
+          The Museum preserves contributors’ own words wherever possible and distinguishes
+          archival originals from edited public copies.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <h3>Who is behind the Museum?</h3>
+      <div class="about-block-copy">
+        <p>
+          The Museum began in 2026 with inaugural contributors. It is now
+          stewarded across a distributed network rather than governed from a permanent institutional center.
+        </p>
+        <p>
+          Local stewardship groups care for collections, preservation, access, interpretation and exhibitions.
+          The archive remains shared across communities; labels can be revised, disputed or supplemented
+          without waiting for a single central curator to authorize the change.
+        </p>
+        <p>
+          Technical systems can assist with preservation, cataloging, duplication, translation
+          and access. Human judgment remains central where context, consent, interpretation,
+          memory and disagreement are involved.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <h3>Consent travels with the record</h3>
+      <div class="about-block-copy">
+        <p>Public display, research, machine learning, generative reuse, attribution, delayed release and unknown future uses remain separate permissions. A contribution can be preserved without becoming public, and becoming public does not make it unrestricted data.</p>
+        <p>Provenance, contributor wording and stated limits are part of the historical record. When a use cannot be reversed technically, the Museum says so instead of pretending control is absolute.</p>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <h3>What are we trying to preserve?</h3>
+      <div class="about-block-copy">
+        <p>
+          Context.
+        </p>
+        <p>
+          The invisible systems underneath an ordinary Tuesday: money, work, housing,
+          technology, transportation, bureaucracy, domestic routines, social rules,
+          waiting, maintenance, care, convenience and inconvenience.
+        </p>
+        <p>
+          People rarely experience these things as “history” while they are happening.
+          That is exactly why we are interested in them.
+        </p>
+      </div>
+    </section>
+
+    <div class="about-question">
+      <div class="kicker">The question that started the Museum</div>
+      <p>
+        In 2026: if someone fifty years from now wanted to understand what it felt like
+        to be alive then, what would we wish we had saved?
+      </p>
+    </div>
+
+    <div class="about-panel-footer">
+      <span>Museum of Ordinary Life / Established 2026</span>
+      <a class="meta-link" href="#context" data-meta-open>Project context ↘</a>
+    </div>
+  </div>
+</aside>
+
+
+<div class="future-overlay" id="future-overlay"></div>
+<aside class="interface-panel" id="interface-panel" role="dialog" aria-modal="true" inert aria-hidden="true" aria-labelledby="interface-heading">
+  <div class="interface-head"><div class="kicker">Interface handoff</div><button class="interface-close" data-future-close>Close ×</button></div>
+  <div class="interface-body"><h2 id="interface-heading">Where should the Museum continue?</h2><p>Your current room, selected path and accessibility settings can travel with the visit.</p>
+    <div class="interface-targets">
+      <button class="interface-target" data-target="Personal interface"><span class="target-dot"></span><span><strong>Personal interface</strong><small>Available / private sensory channel</small></span><span class="target-state">Ready</span></button>
+      <button class="interface-target" data-target="Room surface"><span class="target-dot"></span><span><strong>Room surface</strong><small>Nearby / shared visual space</small></span><span class="target-state">Ready</span></button>
+      <button class="interface-target" data-target="Quiet field"><span class="target-dot"></span><span><strong>Quiet field</strong><small>Nearby / low-stimulus spatial layer</small></span><span class="target-state">Ready</span></button>
+      <button class="interface-target" data-target="Companion interface"><span class="target-dot"></span><span><strong>Companion interface</strong><small>Invite another person into the same visit</small></span><span class="target-state">Ask</span></button>
+    </div>
+    <div class="interface-options"><div class="interface-option"><div class="kicker">Transfer</div>Current place + path</div><div class="interface-option"><div class="kicker">Privacy</div>Local session only</div><div class="interface-option"><div class="kicker">Sensory profile</div>Carry current settings</div><div class="interface-option"><div class="kicker">Return</div>Resume here anytime</div></div>
+    <div class="handoff" id="handoff"><div class="kicker">Handoff complete</div><h3 id="handoff-title">Visit sent.</h3><p>The Museum will continue at your current point in the selected interface.</p></div>
+  </div>
+</aside>
+<aside class="artifact-modal" id="artifact-modal" role="dialog" aria-modal="true" inert aria-hidden="true" aria-labelledby="artifact-modal-title"><div class="artifact-modal-head"><div class="kicker" id="artifact-modal-code">Archive record</div><button class="interface-close" data-future-close>Close ×</button></div><div class="artifact-modal-grid"><div class="artifact-modal-visual" id="artifact-modal-visual"></div><div class="artifact-modal-copy"><div class="kicker" id="artifact-modal-cat"></div><h2 id="artifact-modal-title"></h2><p id="artifact-modal-desc"></p><div class="artifact-data" id="artifact-modal-data"></div><div class="artifact-quote" id="artifact-modal-quote"></div></div></div></aside>
+
+<div class="meta-backdrop" data-meta-close aria-hidden="true"></div>
+
+<aside class="meta-panel" id="project-context" role="dialog" aria-modal="true" inert aria-hidden="true" aria-labelledby="meta-heading">
+  <div class="meta-head">
+    <div class="kicker">Project context / beneath the museum</div>
+    <button class="meta-close" type="button" data-meta-close aria-label="Close project context">Close ×</button>
+  </div>
+
+  <div class="meta-body">
+    <h2 class="meta-display" id="meta-heading">
+      This museum exists in <em>two times at once.</em>
+    </h2>
+
+    <p class="meta-lede">
+      The Museum of Ordinary Life is a real archive established in 2026. This site is a speculative
+      future version of that institution: one possible interface for the Museum after the world around it has changed.
+      The Museum also exists inside the larger speculative-fiction project <strong>No One Noticed</strong>.
+    </p>
+
+    <section class="meta-section">
+      <h3>The larger project</h3>
+      <div class="meta-copy">
+        <p>
+          <em>No One Noticed</em> began as a speculative-fiction project about a near-future
+          societal and technological transformation that happens so gradually—and so seamlessly—
+          that the people living through it don't recognize a singular moment when the world changes.
+        </p>
+        <p>
+          The project has since expanded beyond a book into a broader experiment in worldbuilding,
+          archival practice, art, design, software, social imagination and the creation of real artifacts
+          from a fictional future.
+        </p>
+      </div>
+    </section>
+
+    <section class="meta-section">
+      <h3>Why make the Museum real?</h3>
+      <div class="meta-copy">
+        <p>
+          In the fictional future, the Museum helps people understand how ordinary life worked before
+          and during the transition. Rather than inventing that historical collection later, the real Museum
+          begins collecting now—while the world it will someday remember is still the present.
+        </p>
+        <p>
+          A real photograph made in 2026 can therefore function simultaneously as contemporary documentation,
+          an artwork, historical evidence, and an artifact inside the fictional continuity.
+        </p>
+      </div>
+    </section>
+
+    <section class="meta-section">
+      <h3>The reality layer</h3>
+      <div class="meta-copy">
+        <p>
+          The Museum is the first part of a wider “Reality Layer”: websites, archives, tools,
+          interfaces, documents, institutions and other fragments of the imagined future that can
+          exist meaningfully in the present.
+        </p>
+        <p>
+          Some may remain fictional artifacts. Some may become functioning prototypes.
+          Some may become genuinely useful institutions independent of the story that inspired them.
+        </p>
+      </div>
+    </section>
+
+    <section class="meta-section">
+      <h3>The rule</h3>
+      <div class="meta-copy">
+        <p>
+          Blur ontology, not consent.
+        </p>
+        <p>
+          The project may play with whether an artifact belongs to the present or the future,
+          whether something began as art or institution, and where fiction ends and ordinary life begins.
+          It shouldn’t create ambiguity around safety, privacy, money, identity, emergencies,
+          official authority or other consequential real-world facts.
+        </p>
+      </div>
+    </section>
+
+    <section class="meta-section">
+      <h3>Why hide this here?</h3>
+      <div class="meta-copy">
+        <p>
+          Because the Museum should be able to stand on its own.
+        </p>
+        <p>
+          A visitor doesn't need to know about the novel—or even care about fiction—to contribute
+          something meaningful to the archive. The deeper context is here for people who go looking for it.
+        </p>
+      </div>
+    </section>
+
+    <div class="meta-definition">
+      <div class="kicker">Working method / prefigurative fiction</div>
+      <p>
+        Don’t merely describe a possible future. Build small pieces of it in the present,
+        then let what happens teach you something about the future you were imagining.
+      </p>
+    </div>
+  </div>
+</aside>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-wordmark">
+        Museum <span class="wordmark-of">of</span><br>Ordinary Life
+      </div>
+
+      <div class="footer-col">
+        <div class="kicker">Archive</div>
+        Established 2026<br>
+        <a href="#locations">Shared physical hubs</a><br>
+        <a href="#network">Local museum network</a><br>
+        <a href="#virtual">Virtual museum</a><br>
+        <a href="#archive">Public archive</a><br>
+        <a href="#contributions">Recent contributions</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="kicker">Contact</div>
+        <a href="#" data-mol-mail data-mail-user="etubirtnoc" data-mail-host="gro.efilyranidrofomuesum" aria-label="Email Museum contributions">Email contributions →</a><br>
+        <button class="future-action" data-interface-open>Send visit to interface ↗</button><br>
+        <a class="meta-link footer-meta-link" href="#context" data-meta-open>Project context ↘</a>
+      </div>
+    </div>
+
+    <div class="endnote">
+      <span>Document what you would normally never think to document.</span>
+      <span>Nothing was ordinary while someone was living it.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(() => {
+  const aboutPanel = document.querySelector('#about-panel');
+  const aboutBackdrop = document.querySelector('.about-backdrop');
+  const metaPanel = document.querySelector('#project-context');
+  const metaBackdrop = document.querySelector('.meta-backdrop');
+  const futureOverlay = document.querySelector('#future-overlay');
+  const interfacePanel = document.querySelector('#interface-panel');
+  const artifactModal = document.querySelector('#artifact-modal');
+  const languageMenu = document.querySelector('.language-menu');
+  const themeButtons = [...document.querySelectorAll('[data-theme-choice]')];
+  const themeColorMeta = document.querySelector('#theme-color');
+  const systemDark = window.matchMedia?.('(prefers-color-scheme: dark)');
+  const pageShell = [
+    document.querySelector('.future-prototype'),
+    document.querySelector('.utility'),
+    document.querySelector('header'),
+    document.querySelector('main'),
+    document.querySelector('footer')
+  ].filter(Boolean);
+
+  let lastFocus = null;
+
+  function savedThemeChoice() {
+    try {
+      const saved = localStorage.getItem('mol-future-theme');
+      return ['auto','light','dark'].includes(saved) ? saved : 'auto';
+    } catch (_) { return 'auto'; }
+  }
+
+  function resolvedTheme(choice) {
+    if (choice === 'light' || choice === 'dark') return choice;
+    return systemDark?.matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(choice, { persist = true } = {}) {
+    const safeChoice = ['auto','light','dark'].includes(choice) ? choice : 'auto';
+    if (safeChoice === 'auto') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.dataset.theme = safeChoice;
+
+    themeButtons.forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.themeChoice === safeChoice));
+    });
+
+    themeColorMeta?.setAttribute('content', resolvedTheme(safeChoice) === 'dark' ? '#17171b' : '#f3eee4');
+    if (persist) {
+      try { localStorage.setItem('mol-future-theme', safeChoice); } catch (_) {}
+    }
+  }
+
+  themeButtons.forEach(button => button.addEventListener('click', () => applyTheme(button.dataset.themeChoice)));
+  systemDark?.addEventListener?.('change', () => {
+    if (savedThemeChoice() === 'auto') applyTheme('auto', { persist:false });
+  });
+  applyTheme(savedThemeChoice(), { persist:false });
+
+  function dialogIsOpen(dialog) {
+    return !!dialog && (dialog.classList.contains('is-open') || dialog.classList.contains('open'));
+  }
+
+  function anyDialogOpen() {
+    return [aboutPanel, metaPanel, interfacePanel, artifactModal].some(dialogIsOpen);
+  }
+
+  function setDialogState(dialog, isOpen) {
+    if (!dialog) return;
+    dialog.inert = !isOpen;
+    dialog.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  }
+
+  function setBodyLock() {
+    const open = anyDialogOpen();
+    document.body.classList.toggle('about-open', open);
+    pageShell.forEach(el => { el.inert = open; });
+  }
+
+  function focusableWithin(dialog) {
+    return [...dialog.querySelectorAll('a[href],button:not([disabled]),summary,input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])')]
+      .filter(el => !el.closest('[inert]') && el.getClientRects().length > 0);
+  }
+
+  function trapTabKey(event, dialog) {
+    if (event.key !== 'Tab' || !dialogIsOpen(dialog)) return;
+    const items = focusableWithin(dialog);
+    if (!items.length) { event.preventDefault(); dialog.focus(); return; }
+    const first = items[0], last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  }
+
+  function rememberFocus() { lastFocus = document.activeElement; }
+  function restoreFocus() {
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+    lastFocus = null;
+  }
+
+  function openAbout({ focus=true } = {}) {
+    closeMeta({ restore:false });
+    closeFuturePanels({ restore:false });
+    rememberFocus();
+    aboutPanel?.classList.add('is-open');
+    aboutBackdrop?.classList.add('is-open');
+    setDialogState(aboutPanel, true);
+    aboutBackdrop?.setAttribute('aria-hidden','false');
+    setBodyLock();
+    if (focus) setTimeout(() => aboutPanel?.querySelector('.about-close')?.focus(), 40);
+  }
+
+  function closeAbout({ restore=true } = {}) {
+    aboutPanel?.classList.remove('is-open');
+    aboutBackdrop?.classList.remove('is-open');
+    setDialogState(aboutPanel, false);
+    aboutBackdrop?.setAttribute('aria-hidden','true');
+    setBodyLock();
+    if (restore) restoreFocus();
+  }
+
+  function openMeta({ focus=true } = {}) {
+    closeAbout({ restore:false });
+    closeFuturePanels({ restore:false });
+    rememberFocus();
+    metaPanel?.classList.add('is-open');
+    metaBackdrop?.classList.add('is-open');
+    setDialogState(metaPanel, true);
+    metaBackdrop?.setAttribute('aria-hidden','false');
+    setBodyLock();
+    if (focus) setTimeout(() => metaPanel?.querySelector('.meta-close')?.focus(), 40);
+  }
+
+  function closeMeta({ restore=true } = {}) {
+    metaPanel?.classList.remove('is-open');
+    metaBackdrop?.classList.remove('is-open');
+    setDialogState(metaPanel, false);
+    metaBackdrop?.setAttribute('aria-hidden','true');
+    setBodyLock();
+    if (restore) restoreFocus();
+  }
+
+  function openFuturePanel(dialog) {
+    closeAbout({ restore:false });
+    closeMeta({ restore:false });
+    closeFuturePanels({ restore:false });
+    rememberFocus();
+    futureOverlay?.classList.add('open');
+    dialog?.classList.add('open');
+    setDialogState(dialog, true);
+    setBodyLock();
+    setTimeout(() => dialog?.querySelector('[data-future-close]')?.focus(), 40);
+  }
+
+  function closeFuturePanels({ restore=true } = {}) {
+    futureOverlay?.classList.remove('open');
+    [interfacePanel, artifactModal].forEach(dialog => {
+      dialog?.classList.remove('open');
+      setDialogState(dialog, false);
+    });
+    setBodyLock();
+    if (restore) restoreFocus();
+  }
+
+  function clearHash() { history.replaceState(null, '', location.pathname + location.search); }
+
+  function syncPanelsToHash({ initial=false } = {}) {
+    const hash = location.hash.toLowerCase();
+    if (hash === '#about') { openAbout({ focus:!initial }); return; }
+    if (hash === '#context') { openMeta({ focus:!initial }); return; }
+    closeAbout({ restore:false });
+    closeMeta({ restore:false });
+  }
+
+  document.querySelectorAll('[data-about-open]').forEach(el => el.addEventListener('click', e => {
+    if (location.hash.toLowerCase() === '#about') { e.preventDefault(); openAbout(); }
+  }));
+  document.querySelectorAll('[data-about-close]').forEach(el => el.addEventListener('click', () => {
+    closeAbout();
+    if (location.hash.toLowerCase() === '#about') clearHash();
+  }));
+  document.querySelectorAll('[data-meta-open]').forEach(el => el.addEventListener('click', e => {
+    if (location.hash.toLowerCase() === '#context') { e.preventDefault(); openMeta(); }
+  }));
+  document.querySelectorAll('[data-meta-close]').forEach(el => el.addEventListener('click', () => {
+    closeMeta();
+    if (location.hash.toLowerCase() === '#context') clearHash();
+  }));
+  window.addEventListener('hashchange', () => syncPanelsToHash());
+
+  document.querySelectorAll('[data-interface-open]').forEach(el => el.addEventListener('click', () => openFuturePanel(interfacePanel)));
+  document.querySelectorAll('[data-future-close]').forEach(el => el.addEventListener('click', () => closeFuturePanels()));
+  futureOverlay?.addEventListener('click', () => closeFuturePanels());
+
+  document.addEventListener('click', e => {
+    if (languageMenu?.hasAttribute('open') && !languageMenu.contains(e.target)) languageMenu.removeAttribute('open');
+  });
+
+  document.addEventListener('keydown', e => {
+    const activeDialog = [artifactModal, interfacePanel, metaPanel, aboutPanel].find(dialogIsOpen);
+    if (activeDialog && e.key === 'Tab') { trapTabKey(e, activeDialog); return; }
+    if (e.key !== 'Escape') return;
+
+    if (artifactModal?.classList.contains('open') || interfacePanel?.classList.contains('open')) { closeFuturePanels(); return; }
+    if (metaPanel?.classList.contains('is-open')) { closeMeta(); if (location.hash.toLowerCase()==='#context') clearHash(); return; }
+    if (aboutPanel?.classList.contains('is-open')) { closeAbout(); if (location.hash.toLowerCase()==='#about') clearHash(); return; }
+    if (languageMenu?.hasAttribute('open')) { const summary=languageMenu.querySelector('summary'); languageMenu.removeAttribute('open'); summary?.focus(); }
+  });
+
+  // Reconstruct public role addresses only in the visitor's browser.
+  // This keeps complete addresses out of static page source and defeats basic regex harvesters.
+  document.querySelectorAll('[data-mol-mail]').forEach(link => {
+    const reverse = value => [...(value || '')].reverse().join('');
+    const address = reverse(link.dataset.mailUser) + '@' + reverse(link.dataset.mailHost);
+    link.href = 'mailto:' + address;
+    link.textContent = address;
+  });
+
+  // Future interface prototype interactions.
+  document.querySelectorAll('.interface-target').forEach(el => el.addEventListener('click', () => {
+    const handoff = document.querySelector('#handoff');
+    document.querySelector('#handoff-title').textContent = 'Sent to ' + el.dataset.target + '.';
+    handoff.style.display = 'block';
+  }));
+
+  document.querySelectorAll('.future-artifact').forEach(card => card.addEventListener('click', () => {
+    const shapes = {
+      receipt:'<div class="receipt-object"><i></i><i></i><i></i><i></i><i></i></div>',
+      badge:'<div class="badge-object"></div>', gate:'<div class="gate-object"></div>',
+      paper:'<div class="paper-object"><i></i><i></i><i></i><i></i><i></i></div>',
+      key:'<div class="key-object"></div>', screen:'<div class="screen-object"></div>'
+    };
+    document.querySelector('#artifact-modal-code').textContent = card.dataset.code;
+    document.querySelector('#artifact-modal-cat').textContent = card.dataset.cat + ' / ' + card.dataset.year;
+    document.querySelector('#artifact-modal-title').textContent = card.dataset.title;
+    document.querySelector('#artifact-modal-desc').textContent = card.dataset.desc;
+    document.querySelector('#artifact-modal-quote').textContent = '“' + card.dataset.quote + '”';
+    document.querySelector('#artifact-modal-visual').innerHTML = shapes[card.dataset.shape] || '';
+    document.querySelector('#artifact-modal-data').innerHTML = '<div class="artifact-data-row"><strong>Period</strong><span>'+card.dataset.year+'</span></div><div class="artifact-data-row"><strong>Place</strong><span>'+card.dataset.place+'</span></div><div class="artifact-data-row"><strong>Access</strong><span>Public display / downstream permissions remain attached</span></div><div class="artifact-data-row"><strong>Record state</strong><span>Preserved + replicated</span></div>';
+    openFuturePanel(artifactModal);
+  }));
+
+  const futureSearch = document.querySelector('#future-archive-search');
+  const futureFilter = document.querySelector('#future-archive-filter');
+  function filterFutureArchive(){
+    if(!futureSearch || !futureFilter) return;
+    const q=futureSearch.value.toLowerCase(), c=futureFilter.value;
+    let count=0;
+    document.querySelectorAll('#future-artifact-grid .future-artifact').forEach(card=>{
+      const hay=(card.dataset.title+' '+card.dataset.desc+' '+card.dataset.cat+' '+card.dataset.place).toLowerCase();
+      const show=(!q||hay.includes(q))&&(!c||card.dataset.cat===c);
+      card.style.display=show?'flex':'none'; if(show) count++;
+    });
+    document.querySelector('#future-archive-count').textContent=count+' record'+(count===1?'':'s');
+  }
+  futureSearch?.addEventListener('input',filterFutureArchive);
+  futureFilter?.addEventListener('input',filterFutureArchive);
+
+  const futureForm=document.querySelector('#future-form');
+  futureForm?.addEventListener('submit',e=>{
+    e.preventDefault();
+    const code='MOL / INCOMING / '+String(Math.floor(Math.random()*99999)).padStart(5,'0');
+    document.querySelector('#future-receipt-code').textContent=code;
+    document.querySelector('#future-receipt').style.display='block';
+    document.querySelector('#future-receipt').scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',block:'center'});
+  });
+  document.querySelector('#future-file')?.addEventListener('change',e=>{
+    const n=e.target.files.length;
+    if(n) document.querySelector('#future-file-label').textContent=n+' file'+(n===1?'':'s')+' ready (demo only)';
+  });
+
+  const stageCaption=document.querySelector('#stage-caption');
+  document.querySelectorAll('[data-stage-note]').forEach(el=>el.addEventListener('click',()=>stageCaption.textContent=el.dataset.stageNote));
+  document.querySelectorAll('.mode-card').forEach(el=>el.addEventListener('click',()=>{
+    document.querySelectorAll('.mode-card').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});
+    el.classList.add('active');
+    el.setAttribute('aria-pressed','true');
+    stageCaption.textContent=el.dataset.mode;
+  }));
+  document.querySelector('#begin-virtual')?.addEventListener('click',()=>document.querySelector('#virtual-stage')?.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));
+  const roomTexts=['Room recomposed around “waiting”: transit, healthcare, customer service, elevators and loading screens.','Room recomposed around “permission”: badges, forms, passwords, tickets, approvals and eligibility.','Room recomposed around “home”: keys, charging cables, grocery lists, laundry, medicine cabinets and shoes by doors.'];
+  let roomIndex=0;
+  document.querySelector('#recompose-room')?.addEventListener('click',()=>{stageCaption.textContent=roomTexts[roomIndex++%roomTexts.length]});
+
+  syncPanelsToHash({ initial:true });
+})();
+</script>
+
+</body>
+</html>

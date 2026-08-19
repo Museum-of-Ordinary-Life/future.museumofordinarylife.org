@@ -1,0 +1,36 @@
+# Museum of Ordinary Life — speculative future interface
+# Host-specific policy for https://future.museumofordinarylife.org/
+#
+# Human visitors and ordinary search/discovery are welcome.
+# Automated access does not imply permission for model training or unrestricted reuse.
+
+User-agent: *
+Allow: /
+
+# OpenAI: allow search discovery; decline potential training crawl.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+# Anthropic: allow user-directed retrieval and search; decline model-development crawl.
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Google Search remains allowed through the wildcard rule above.
+# Google-Extended is a separate control token for Gemini/Vertex AI uses.
+User-agent: Google-Extended
+Disallow: /
+
+# Common Crawl bulk corpus crawler.
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://future.museumofordinarylife.org/sitemap.xml
